@@ -14,40 +14,40 @@ const FEATURED_GUIDES = [
     title: "Redfish — The Complete Guide",
     excerpt: "Habitat, tackle, techniques, and seasonal patterns. The definitive red drum playbook.",
     href: "https://thetackleroom.com/blogs/news/redfish-fishing-guide-how-to-catch-red-drum-inshore",
-    image: "/images/home-redfish.jpg",
+    image: "/images/home-redfish.webp",
     badge: "Species Guide",
   },
   {
     title: "Florida Keys Destination Guide",
     excerpt: "Flats, bridges, offshore — the most diverse saltwater fishery on Earth.",
     href: "/destinations#florida-keys",
-    image: "/images/home-keys.jpg",
+    image: "/images/home-keys.webp",
     badge: "Destination",
   },
   {
     title: "Braided Line Guide",
     excerpt: "When to use braid, diameter charts, and our top picks for every application.",
     href: "https://thetackleroom.com/blogs/news/braided-fishing-line-guide-when-to-use-braid-diameter-charts-and-top-picks",
-    image: "/images/home-braid.jpg",
+    image: "/images/home-braid.webp",
     badge: "Gear Guide",
   },
 ];
 
 const SPECIES_PREVIEW = [
-  { name: "Tarpon", image: "/images/sp-tarpon.jpg", href: "https://thetackleroom.com/blogs/news/tarpon-fishing-guide-how-to-catch-the-silver-king" },
-  { name: "Yellowfin Tuna", image: "/images/sp-yellowfin.jpg", href: "https://thetackleroom.com/blogs/news/yellowfin-tuna-fishing-guide-techniques-tackle-and-top-spots" },
-  { name: "Snook", image: "/images/sp-snook.jpg", href: "https://thetackleroom.com/blogs/news/snook-fishing-guide-techniques-tackle-and-where-to-find-them" },
-  { name: "Mahi-Mahi", image: "/images/sp-mahi.jpg", href: "https://thetackleroom.com/blogs/news/mahi-mahi-fishing-guide-how-to-catch-dolphin-offshore-1" },
-  { name: "Red Snapper", image: "/images/sp-redsnapper.jpg", href: "https://thetackleroom.com/blogs/news/red-snapper-fishing-guide-how-to-catch-handle-and-release" },
-  { name: "Sailfish", image: "/images/sp-sailfish.jpg", href: "https://thetackleroom.com/blogs/news/sailfish-fishing-guide" },
+  { name: "Tarpon", image: "/images/sp-tarpon.webp", href: "https://thetackleroom.com/blogs/news/tarpon-fishing-guide-how-to-catch-the-silver-king" },
+  { name: "Yellowfin Tuna", image: "/images/sp-yellowfin.webp", href: "https://thetackleroom.com/blogs/news/yellowfin-tuna-fishing-guide-techniques-tackle-and-top-spots" },
+  { name: "Snook", image: "/images/sp-snook.webp", href: "https://thetackleroom.com/blogs/news/snook-fishing-guide-techniques-tackle-and-where-to-find-them" },
+  { name: "Mahi-Mahi", image: "/images/sp-mahi.webp", href: "https://thetackleroom.com/blogs/news/mahi-mahi-fishing-guide-how-to-catch-dolphin-offshore-1" },
+  { name: "Red Snapper", image: "/images/sp-redsnapper.webp", href: "https://thetackleroom.com/blogs/news/red-snapper-fishing-guide-how-to-catch-handle-and-release" },
+  { name: "Sailfish", image: "/images/sp-sailfish.webp", href: "https://thetackleroom.com/blogs/news/sailfish-fishing-guide" },
 ];
 
 const DESTINATIONS_PREVIEW = [
-  { name: "Florida Keys", image: "/images/dest-keys.jpg", href: "/destinations#florida-keys" },
-  { name: "North Carolina", image: "/images/dest-nc.jpg", href: "/destinations#north-carolina" },
-  { name: "The Bahamas", image: "/images/dest-bahamas.jpg", href: "/destinations#bahamas" },
-  { name: "Louisiana Marsh", image: "/images/dest-louisiana.jpg", href: "/destinations#louisiana" },
-  { name: "Gulf Coast", image: "/images/dest-gulf.jpg", href: "/destinations#gulf-coast" },
+  { name: "Florida Keys", image: "/images/dest-keys.webp", href: "/destinations#florida-keys" },
+  { name: "North Carolina", image: "/images/dest-nc.webp", href: "/destinations#north-carolina" },
+  { name: "The Bahamas", image: "/images/dest-bahamas.webp", href: "/destinations#bahamas" },
+  { name: "Louisiana Marsh", image: "/images/dest-louisiana.webp", href: "/destinations#louisiana" },
+  { name: "Gulf Coast", image: "/images/dest-gulf.webp", href: "/destinations#gulf-coast" },
 ];
 
 export default function HomePage() {
@@ -56,7 +56,7 @@ export default function HomePage() {
       {/* Hero */}
       <div className="relative h-[380px] sm:h-[440px] flex items-end">
         <img
-          src="/images/hero-coastal.jpg"
+          src="/images/hero-coastal.webp"
           alt="Saltwater fishing at dawn"
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -216,7 +216,7 @@ export default function HomePage() {
       {/* Shop teaser */}
       <div className="relative h-[300px] flex items-center">
         <img
-          src="/images/home-shop.jpg"
+          src="/images/home-shop.webp"
           alt="Tackle and gear"
           className="absolute inset-0 w-full h-full object-cover"
           loading="lazy"

@@ -17,7 +17,7 @@ const FEATURED = {
   title: "Braided Fishing Line Guide",
   excerpt: "When to use braid, diameter charts, and our top picks. The most comprehensive braid guide on the internet.",
   slug: "braided-fishing-line-guide-when-to-use-braid-diameter-charts-and-top-picks",
-  image: "/images/gear-hero-braid.jpg",
+  image: "/images/gear-hero-braid.webp",
 };
 
 const GEAR_ARTICLES = [
@@ -27,28 +27,28 @@ const GEAR_ARTICLES = [
     excerpt: "Every hook size, type, and application for saltwater. Circle, J-hook, treble — the definitive reference.",
     slug: "hook-size-chart",
     category: "Reference",
-    image: "/images/gear-hooks.jpg",
+    image: "/images/gear-hooks.webp",
   },
   {
     title: "Leader Weight Chart",
     excerpt: "How to match leaders to target species. Fluoro, mono, and wire — diameters, breaking strengths, and when to size up.",
     slug: "leader-weight-chart-match-leaders-to-target-species",
     category: "Reference",
-    image: "/images/gear-leaders.jpg",
+    image: "/images/gear-leaders.webp",
   },
   {
     title: "Trolling Speed Chart",
     excerpt: "Optimal speeds by species and lure type. The chart every offshore angler should have on the console.",
     slug: "trolling-speed-chart-optimal-speeds-by-species-and-lure-type",
     category: "Reference",
-    image: "/images/gear-trolling.jpg",
+    image: "/images/gear-trolling.webp",
   },
   {
     title: "Snap Swivel Size Chart",
     excerpt: "Complete guide to choosing the right size. Breaking strengths, applications, and when to skip the swivel entirely.",
     slug: "snap-swivel-size-chart-complete-guide-to-choosing-the-right-size",
     category: "Reference",
-    image: "/images/gear-swivels.jpg",
+    image: "/images/gear-swivels.webp",
   },
   // Comparisons
   {
@@ -56,28 +56,28 @@ const GEAR_ARTICLES = [
     excerpt: "Which fishing line should you use? The real answer, with actual test data and on-water experience.",
     slug: "mono-vs-fluorocarbon-vs-braid-which-fishing-line-should-you-use",
     category: "Comparison",
-    image: "/images/gear-line-compare.jpg",
+    image: "/images/gear-line-compare.webp",
   },
   {
     title: "Circle Hooks vs J-Hooks",
     excerpt: "Choosing the right hook for saltwater. When circles outperform J-hooks and vice versa.",
     slug: "circle-hooks-vs-j-hooks-choosing-the-right-hook-for-fishing",
     category: "Comparison",
-    image: "/images/gear-circle-j.jpg",
+    image: "/images/gear-circle-j.webp",
   },
   {
     title: "Spinning vs Conventional Reels",
     excerpt: "Which is right for saltwater? Pros, cons, and the specific applications where each dominates.",
     slug: "spinning-vs-conventional-reels-which-is-right-for-saltwater",
     category: "Comparison",
-    image: "/images/gear-reels-compare.jpg",
+    image: "/images/gear-reels-compare.webp",
   },
   {
     title: "Wire vs Mono Leaders",
     excerpt: "When to use each for saltwater. Bite-offs, abrasion, visibility — the trade-offs explained.",
     slug: "wire-vs-mono-leaders-when-to-use-each-for-saltwater-fishing",
     category: "Comparison",
-    image: "/images/gear-wire-mono.jpg",
+    image: "/images/gear-wire-mono.webp",
   },
   // Guides
   {
@@ -85,28 +85,28 @@ const GEAR_ARTICLES = [
     excerpt: "Fast, moderate, and slow action rods. What the specs actually mean and which action fits your fishing.",
     slug: "rod-action-explained",
     category: "Guide",
-    image: "/images/gear-rod-action.jpg",
+    image: "/images/gear-rod-action.webp",
   },
   {
     title: "Saltwater Fishing Gear: 10 Essentials",
     excerpt: "The starter kit. Everything you need to get on the water and actually catch fish, without overbuying.",
     slug: "saltwater-fishing-gear-10-essentials-to-get-outdoors",
     category: "Guide",
-    image: "/images/gear-essentials.jpg",
+    image: "/images/gear-essentials.webp",
   },
   {
     title: "Tackle Maintenance Guide",
     excerpt: "Clean, store, and protect your gear. Salt kills everything — here's how to fight back.",
     slug: "tackle-maintenance-guide-clean-store-and-protect-your-gear",
     category: "Guide",
-    image: "/images/gear-maintenance.jpg",
+    image: "/images/gear-maintenance.webp",
   },
   {
     title: "Types of Saltwater Fishing Lures",
     excerpt: "A complete guide to every lure category. Plugs, soft plastics, jigs, spoons, and when to throw each.",
     slug: "types-of-saltwater-fishing-lures",
     category: "Guide",
-    image: "/images/gear-lure-types.jpg",
+    image: "/images/gear-lure-types.webp",
   },
 ];
 

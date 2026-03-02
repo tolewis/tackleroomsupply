@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     siteName: "TackleRoom Supply",
     images: [
       {
-        url: "/images/hero-coastal.jpg",
+        url: "/images/hero-coastal.webp",
         width: 1600,
         height: 900,
         alt: "TackleRoom Supply — Saltwater Fishing Content",

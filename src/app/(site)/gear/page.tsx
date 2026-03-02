@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import NextLink from "next/link";
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
 import { Grid } from "@/components/layout/Grid";
@@ -164,6 +165,25 @@ export default function GearPage() {
               . We test it, fish it, sell it — in that order. If we wouldn&apos;t
               put it on the shelf, it doesn&apos;t make the guide.
             </Text>
+          </div>
+
+          {/* Gear by destination */}
+          <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 mb-12">
+            {[
+              { title: "Florida Keys Tackle", href: "/destinations/florida-keys#tackle", img: "/images/dest-keys.webp" },
+              { title: "NC Coast Tackle", href: "/destinations/north-carolina#tackle", img: "/images/dest-nc.webp" },
+              { title: "Bahamas Tackle", href: "/destinations/bahamas#tackle", img: "/images/dest-bahamas.webp" },
+              { title: "Louisiana Tackle", href: "/destinations/louisiana#tackle", img: "/images/dest-louisiana.webp" },
+              { title: "Gulf Coast Tackle", href: "/destinations/gulf-coast#tackle", img: "/images/dest-gulf.webp" },
+            ].map((d) => (
+              <NextLink key={d.href} href={d.href} className="group relative rounded-xl overflow-hidden aspect-[3/2]">
+                <img src={d.img} alt={d.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-3">
+                  <span className="text-xs font-heading font-semibold text-white drop-shadow-lg">{d.title}</span>
+                </div>
+              </NextLink>
+            ))}
           </div>
 
           <div className="mb-10">

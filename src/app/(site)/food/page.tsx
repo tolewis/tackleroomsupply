@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import NextLink from "next/link";
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
 import { Heading } from "@/components/primitives/Heading";
@@ -90,6 +91,31 @@ export default function SpeciesPage() {
             Tackle, technique, seasonal patterns, and where to find them.
             Written by anglers who fish these waters.
           </Text>
+        </Container>
+      </Section>
+
+      {/* Destination cross-links */}
+      <Section spacing="sm">
+        <Container>
+          <Text variant="muted" size="xs" className="uppercase tracking-widest font-heading font-semibold mb-3">Where to fish these species</Text>
+          <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
+            {[
+              { title: "Florida Keys", sub: "Tarpon, permit, bonefish, snook, mahi", href: "/destinations/florida-keys", img: "/images/dest-keys.webp" },
+              { title: "North Carolina", sub: "Red drum, bluefin, king mackerel, cobia", href: "/destinations/north-carolina", img: "/images/dest-nc.webp" },
+              { title: "The Bahamas", sub: "Bonefish, blue marlin, wahoo, yellowtail", href: "/destinations/bahamas", img: "/images/dest-bahamas.webp" },
+              { title: "Louisiana Marsh", sub: "Redfish, speckled trout, black drum", href: "/destinations/louisiana", img: "/images/dest-louisiana.webp" },
+              { title: "Gulf Coast", sub: "Red snapper, cobia, king mackerel, tarpon", href: "/destinations/gulf-coast", img: "/images/dest-gulf.webp" },
+            ].map((d) => (
+              <NextLink key={d.href} href={d.href} className="group relative rounded-xl overflow-hidden aspect-[4/3]">
+                <img src={d.img} alt={d.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-3">
+                  <span className="block text-sm font-heading font-semibold text-white drop-shadow-lg">{d.title}</span>
+                  <span className="block text-xs text-white/70 mt-0.5">{d.sub}</span>
+                </div>
+              </NextLink>
+            ))}
+          </div>
         </Container>
       </Section>
 

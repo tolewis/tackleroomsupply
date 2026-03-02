@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import NextLink from "next/link";
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
 import { Grid } from "@/components/layout/Grid";
@@ -20,7 +21,7 @@ const FEATURED_GUIDES = [
   {
     title: "Florida Keys Destination Guide",
     excerpt: "Flats, bridges, offshore — the most diverse saltwater fishery on Earth.",
-    href: "/destinations#florida-keys",
+    href: "/destinations/florida-keys",
     image: "/images/home-keys.webp",
     badge: "Destination",
   },
@@ -43,11 +44,11 @@ const SPECIES_PREVIEW = [
 ];
 
 const DESTINATIONS_PREVIEW = [
-  { name: "Florida Keys", image: "/images/dest-keys.webp", href: "/destinations#florida-keys" },
-  { name: "North Carolina", image: "/images/dest-nc.webp", href: "/destinations#north-carolina" },
-  { name: "The Bahamas", image: "/images/dest-bahamas.webp", href: "/destinations#bahamas" },
-  { name: "Louisiana Marsh", image: "/images/dest-louisiana.webp", href: "/destinations#louisiana" },
-  { name: "Gulf Coast", image: "/images/dest-gulf.webp", href: "/destinations#gulf-coast" },
+  { name: "Florida Keys", image: "/images/dest-keys.webp", href: "/destinations/florida-keys" },
+  { name: "North Carolina", image: "/images/dest-nc.webp", href: "/destinations/north-carolina" },
+  { name: "The Bahamas", image: "/images/dest-bahamas.webp", href: "/destinations/bahamas" },
+  { name: "Louisiana Marsh", image: "/images/dest-louisiana.webp", href: "/destinations/louisiana" },
+  { name: "Gulf Coast", image: "/images/dest-gulf.webp", href: "/destinations/gulf-coast" },
 ];
 
 export default function HomePage() {
@@ -98,35 +99,63 @@ export default function HomePage() {
             Featured
           </Heading>
           <Grid cols={3}>
-            {FEATURED_GUIDES.map((guide) => (
-              <a
-                key={guide.title}
-                href={guide.href}
-                target={guide.href.startsWith("http") ? "_blank" : undefined}
-                rel={guide.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                className="group"
-              >
-                <Card hoverable>
-                  <div className="aspect-[16/10] rounded-lg overflow-hidden mb-4">
-                    <img
-                      src={guide.image}
-                      alt={guide.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      loading="lazy"
-                    />
-                  </div>
-                  <CardContent>
-                    <Badge variant="creek" className="mb-3">{guide.badge}</Badge>
-                    <Heading as="h3" size="lg" className="mb-2">
-                      {guide.title}
-                    </Heading>
-                    <Text variant="secondary" size="sm">
-                      {guide.excerpt}
-                    </Text>
-                  </CardContent>
-                </Card>
-              </a>
-            ))}
+            {FEATURED_GUIDES.map((guide) =>
+              guide.href.startsWith("http") ? (
+                <a
+                  key={guide.title}
+                  href={guide.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group"
+                >
+                  <Card hoverable>
+                    <div className="aspect-[16/10] rounded-lg overflow-hidden mb-4">
+                      <img
+                        src={guide.image}
+                        alt={guide.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                    </div>
+                    <CardContent>
+                      <Badge variant="creek" className="mb-3">{guide.badge}</Badge>
+                      <Heading as="h3" size="lg" className="mb-2">
+                        {guide.title}
+                      </Heading>
+                      <Text variant="secondary" size="sm">
+                        {guide.excerpt}
+                      </Text>
+                    </CardContent>
+                  </Card>
+                </a>
+              ) : (
+                <NextLink
+                  key={guide.title}
+                  href={guide.href}
+                  className="group"
+                >
+                  <Card hoverable>
+                    <div className="aspect-[16/10] rounded-lg overflow-hidden mb-4">
+                      <img
+                        src={guide.image}
+                        alt={guide.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                    </div>
+                    <CardContent>
+                      <Badge variant="creek" className="mb-3">{guide.badge}</Badge>
+                      <Heading as="h3" size="lg" className="mb-2">
+                        {guide.title}
+                      </Heading>
+                      <Text variant="secondary" size="sm">
+                        {guide.excerpt}
+                      </Text>
+                    </CardContent>
+                  </Card>
+                </NextLink>
+              )
+            )}
           </Grid>
         </Container>
       </Section>
@@ -190,7 +219,7 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {DESTINATIONS_PREVIEW.map((dest) => (
-              <a
+              <NextLink
                 key={dest.name}
                 href={dest.href}
                 className="group relative aspect-[4/3] lg:aspect-[3/4] rounded-xl overflow-hidden"
@@ -207,7 +236,7 @@ export default function HomePage() {
                     {dest.name}
                   </span>
                 </div>
-              </a>
+              </NextLink>
             ))}
           </div>
         </Container>

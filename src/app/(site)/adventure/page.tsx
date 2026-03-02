@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import NextLink from "next/link";
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
 import { Grid } from "@/components/layout/Grid";
@@ -200,6 +201,36 @@ export default function StoriesPage() {
               </a>
             ))}
           </Grid>
+        </Container>
+      </Section>
+
+      {/* Destination guides cross-link */}
+      <Section>
+        <Container>
+          <Heading as="h2" size="3xl" className="mb-2">
+            Destination Guides
+          </Heading>
+          <Text variant="secondary" className="mt-2 mb-8 max-w-2xl">
+            Put these techniques to work. In-depth guides with tackle specs, month-by-month calendars, and trip planning for every fishery.
+          </Text>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            {[
+              { title: "Florida Keys", sub: "Flats, bridges, offshore, backcountry", href: "/destinations/florida-keys", img: "/images/dest-keys.webp" },
+              { title: "North Carolina", sub: "Drum run, offshore, pier, inshore", href: "/destinations/north-carolina", img: "/images/dest-nc.webp" },
+              { title: "The Bahamas", sub: "Flats, blue water, wahoo, reef", href: "/destinations/bahamas", img: "/images/dest-bahamas.webp" },
+              { title: "Louisiana Marsh", sub: "Sight-casting, marsh, Venice offshore", href: "/destinations/louisiana", img: "/images/dest-louisiana.webp" },
+              { title: "Gulf Coast", sub: "Texas, Panhandle, rigs, Space Coast", href: "/destinations/gulf-coast", img: "/images/dest-gulf.webp" },
+            ].map((d) => (
+              <NextLink key={d.href} href={d.href} className="group relative aspect-[4/3] lg:aspect-[3/4] rounded-xl overflow-hidden">
+                <img src={d.img} alt={d.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4">
+                  <span className="block font-heading font-bold text-white text-lg drop-shadow-lg">{d.title}</span>
+                  <span className="block text-xs text-white/60 mt-0.5">{d.sub}</span>
+                </div>
+              </NextLink>
+            ))}
+          </div>
         </Container>
       </Section>
 

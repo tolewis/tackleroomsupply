@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import NextLink from "next/link";
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
 import { Heading } from "@/components/primitives/Heading";
@@ -8,27 +9,41 @@ import { Badge } from "@/components/primitives/Badge";
 export const metadata: Metadata = {
   title: "Gulf Coast Fishing Guide - Texas to the Florida Panhandle",
   description:
-    "Saltwater fishing guide to the Gulf Coast. Texas wade fishing, Florida Panhandle red snapper, Alabama rigs, Mosquito Lagoon sight fishing, and trip planning.",
+    "The definitive Gulf Coast saltwater fishing guide. Texas wade fishing, Panhandle red snapper, Alabama rigs, Mosquito Lagoon sight-casting - species, seasons, tackle, and trip planning from Port Aransas to the Space Coast.",
 };
 
 const SECTIONS = [
-  {
-    heading: "Texas Coast - Galveston to Port Aransas",
-    body: "The Texas coast is wade fishing country. Anglers park on the shoreline and walk the flats for speckled trout and redfish. Baffin Bay is legendary for trophy trout over 8 pounds. Port Aransas gives you access to nearshore kingfish and offshore snapper. The Texas two-step: topwater at first light for specks, then switch to soft plastics for reds as the sun gets up.",
-  },
-  {
-    heading: "Florida Panhandle - Destin to Pensacola",
-    body: "The Panhandle is where red snapper lives. When federal season opens in June, it's a frenzy of happy anglers pulling up limits of 15-pound snappers. Destin's fleet is one of the largest on the Gulf. Inshore, Choctawhatchee Bay and Pensacola Bay hold redfish, trout, and flounder on the grass flats. The Panhandle is the most affordable Gulf Coast fishing destination - period.",
-  },
-  {
-    heading: "Alabama & Mississippi - The Rigs",
-    body: "The oil and gas platforms off Alabama and Mississippi are floating reefs. Red snapper, amberjack, cobia, and king mackerel stack around the structure. A 20-mile run from Orange Beach puts you on hundreds of platforms. The inshore scene is underrated too - Mobile Bay and the Mississippi Sound hold solid redfish and trout populations with very little pressure compared to Florida or Louisiana.",
-  },
-  {
-    heading: "Mosquito Lagoon & Indian River - Florida's Space Coast",
-    body: "The Space Coast is where you sight-cast to tailing redfish on glass-calm flats with the Kennedy Space Center in the background. Mosquito Lagoon is the best sight-fishing for redfish in Florida. Indian River Lagoon adds snook, trout, and tarpon. This is light-tackle paradise - 7-weight fly rods, 10lb spinning gear, and fish that will eat a well-placed fly or lure on every cast.",
-  },
+  { id: "texas", label: "Texas" },
+  { id: "panhandle", label: "Panhandle" },
+  { id: "rigs", label: "Alabama Rigs" },
+  { id: "space-coast", label: "Space Coast" },
+  { id: "calendar", label: "Calendar" },
+  { id: "tackle", label: "Tackle" },
+  { id: "trip", label: "Plan Your Trip" },
 ];
+
+const MONTH_DATA = [
+  { month: "January", species: "Speckled trout (TX winter peak), redfish, sheepshead, black drum", note: "Trophy trout season in Texas. Baffin Bay averages 28+ inches. Laguna Madre redfish school by the hundreds in cooler water. Panhandle trout in deep creek holes." },
+  { month: "February", species: "Speckled trout, redfish, sheepshead, flounder (early)", note: "Last month for winter trophy trout in Texas bays. Sheepshead stack on jetties and pilings coast-wide. Panhandle inshore stays slow but steady." },
+  { month: "March", species: "Redfish, speckled trout, cobia (early FL), sheepshead", note: "Spring transition. Redfish move shallow across all regions. Cobia scouts appear off Destin. Mosquito Lagoon sight-fishing turns on." },
+  { month: "April", species: "Cobia, redfish, speckled trout, king mackerel (early)", note: "Cobia migration hits the Panhandle hard. Sight-fish migrating pods following manta rays. Texas topwater bite heats up on morning flats." },
+  { month: "May", species: "Cobia (peak FL), king mackerel, red snapper (pre-season), tarpon (Space Coast)", note: "Kings running from Orange Beach to Destin. Tarpon showing in Indian River. Texas specks on topwater at first light. Pre-season snapper scouting." },
+  { month: "June", species: "Red snapper (federal season opens), king mackerel, tarpon, cobia", note: "Federal red snapper season opens. Destin fleet goes full tilt. Alabama rigs stacked with snapper and amberjack. Tarpon rolling in passes coast-wide." },
+  { month: "July", species: "Red snapper, king mackerel, tarpon, mahi, speckled trout", note: "Peak offshore month. Snapper limits coming fast in 35-100 ft. Texas live-bait trout fishing peaks in back bays. Night fishing for snook at Indian River." },
+  { month: "August", species: "Red snapper (state seasons vary), tarpon, redfish, mangrove snapper", note: "Bull redfish staging at Texas jetties. Tarpon still thick at Space Coast. Alabama platform fishing outstanding for mangrove snapper and amberjack." },
+  { month: "September", species: "Bull redfish (TX run starts), speckled trout, flounder, red snapper", note: "Texas bull redfish run begins. Fish 36-40 inches at jetties and passes. Fall mullet run triggers feeding frenzy coast-wide. Flounder bite improves." },
+  { month: "October", species: "Bull redfish (TX peak), speckled trout, flounder, king mackerel", note: "Peak bull run in Texas. Panhandle bull reds near beaches. Laguna Madre schools of hundreds of reds on cooler mornings. Outstanding variety month." },
+  { month: "November", species: "Bull redfish (FL peak), speckled trout (winter pattern starts), flounder", note: "Florida Panhandle bull redfish peak near beaches. Halloween through February window. Texas trout moving to winter holes. Fall flounder run." },
+  { month: "December", species: "Speckled trout (trophy season), redfish, sheepshead, black drum", note: "Winter trophy trout pattern in full swing across Texas bays. Baffin Bay produces fish over 8 lbs. Panhandle sheepshead and black drum on structure." },
+];
+
+function SectionImage({ src, alt }: { src: string; alt: string }) {
+  return (
+    <div className="relative h-[240px] sm:h-[300px] rounded-xl overflow-hidden mb-8">
+      <img src={src} alt={alt} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+    </div>
+  );
+}
 
 export default function GulfCoastPage() {
   return (
@@ -37,7 +52,7 @@ export default function GulfCoastPage() {
       <div className="relative h-[55vh] min-h-[440px] max-h-[660px]">
         <img
           src="/images/dest-gulf.webp"
-          alt="Gulf Coast offshore fishing at sunrise"
+          alt="Warm Gulf Coast water stretching to the horizon"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
@@ -56,6 +71,19 @@ export default function GulfCoastPage() {
         </div>
       </div>
 
+      {/* Sticky section nav */}
+      <div className="sticky top-16 z-30 border-b border-border bg-surface/80 backdrop-blur-md">
+        <Container>
+          <div className="flex gap-3 py-3 overflow-x-auto no-scrollbar">
+            {SECTIONS.map((s) => (
+              <a key={s.id} href={`#${s.id}`} className="whitespace-nowrap rounded-full border border-border px-4 py-1.5 text-sm font-heading font-medium text-text-secondary hover:text-accent hover:border-accent transition-colors">
+                {s.label}
+              </a>
+            ))}
+          </div>
+        </Container>
+      </div>
+
       {/* Quick facts */}
       <Section>
         <Container>
@@ -71,11 +99,11 @@ export default function GulfCoastPage() {
               </div>
               <div>
                 <Text variant="muted" size="xs" className="uppercase tracking-widest font-heading font-semibold mb-1">Best Months</Text>
-                <Text size="sm">Inshore: Year-round. Red snapper: June-July (federal season). Tarpon: May-August.</Text>
+                <Text size="sm">Year-round. Red snapper: June-July. Bull reds: Sept-Nov. Trophy trout: Dec-Feb. Cobia: Mar-May.</Text>
               </div>
               <div>
                 <Text variant="muted" size="xs" className="uppercase tracking-widest font-heading font-semibold mb-1">Fishing Style</Text>
-                <Text size="sm">Bay, flats, nearshore, reef, offshore, oil rigs</Text>
+                <Text size="sm">Wade fishing, inshore flats, offshore platforms, sight-casting, nearshore, charter</Text>
               </div>
             </div>
           </div>
@@ -85,38 +113,281 @@ export default function GulfCoastPage() {
       {/* Intro */}
       <Section>
         <Container>
-          <div className="max-w-3xl">
+          <div className="max-w-3xl space-y-6">
             <Text variant="secondary" size="lg" className="leading-relaxed">
-              The Gulf of Mexico is the largest fishery in America. From the flats of Mosquito Lagoon to the oil rigs off Port Aransas, the Gulf Coast delivers year-round saltwater fishing at every level. Inshore, nearshore, and offshore - the Gulf has it all, and most of it is within a tank of gas.
+              The Gulf of Mexico is the largest fishery in America. From the skinny water of Mosquito Lagoon to the oil platforms off Port Aransas, this coast covers more species, more styles, and more accessible water than any other region in the country. Wade fishers in Texas. Snapper boats out of Destin. Sight-casters on the Space Coast poling glass-calm flats with Kennedy Space Center in the background. It is all Gulf Coast, and it all fishes year-round.
+            </Text>
+            <Text variant="secondary" className="leading-relaxed">
+              What sets the Gulf apart is range. A first-timer can wade knee-deep on a Texas flat and catch slot redfish on a gold spoon. A seasoned offshore crew can run 20 miles out of Orange Beach and pull limits of red snapper off oil platforms in 100 feet of water. The Panhandle has the densest concentration of charter boats in the Southeast. The Space Coast has the best redfish sight-fishing in Florida. And the whole thing stretches 1,600 miles of coastline with something biting every single month. This guide covers the fisheries that matter, region by region, with specific numbers from the water.
             </Text>
           </div>
         </Container>
       </Section>
 
-      {/* Sections */}
-      {SECTIONS.map((section, i) => (
-        <Section key={section.heading} className={i % 2 === 0 ? "bg-surface-raised" : ""}>
-          <Container>
-            <div className="max-w-3xl">
-              <Heading as="h2" size="4xl" className="mb-4">
-                {section.heading}
-              </Heading>
-              <Text variant="secondary" className="leading-relaxed">
-                {section.body}
-              </Text>
+      {/* Texas Coast */}
+      <Section className="bg-surface-raised" id="texas">
+        <Container>
+          <div className="max-w-3xl space-y-10">
+            <div>
+              <SectionImage src="/images/story-surf.webp" alt="Wade fishing the Texas coast at dawn" />
+              <Heading as="h2" size="4xl" className="mb-4">Texas Coast - Wade Fishing Country</Heading>
+              <div className="space-y-4">
+                <Text variant="secondary" className="leading-relaxed">
+                  Texas saltwater fishing is built on wading. You park the boat, slide over the side into waist-deep water, and work the flats on foot. It is the most intimate way to fish the coast, and Texas has more fishable wade water than anywhere else on the Gulf. The Lower Laguna Madre, Upper Laguna Madre, Baffin Bay, and the bays around Port Aransas and Rockport are all wade-fishing destinations first.
+                </Text>
+                <Text variant="secondary" className="leading-relaxed">
+                  The fish have gotten bigger. Redfish along the Texas coast now frequently measure 36 to 40 inches - a significant increase from the historical slot-fish era when a 28-inch red was a good day. Management worked. The population is stacked, and the average size keeps climbing. In the cooler months, Laguna Madre holds schools of hundreds of redfish on shallow sand and grass flats. You can see the wakes from 200 yards away on a calm morning.
+                </Text>
+                <Text variant="secondary" className="leading-relaxed">
+                  Baffin Bay is legendary for trophy speckled trout. Fish over 8 pounds come out of Baffin regularly, and the winter average runs 28 inches or better. The water is shallow, often murky, and loaded with structure - rock formations, grass beds, and sand potholes that hold big trout through the cold months. December through February is the window. Slow your retrieve, fish soft plastics on light jig heads, and work the deeper potholes on incoming tide.
+                </Text>
+                <Text variant="secondary" className="leading-relaxed">
+                  The Texas two-step is the standard daily pattern: topwater at first light for speckled trout, then switch to soft plastics for redfish as the sun gets up and the fish move to the bottom. Topwater lures like the She Dog and Super Spook Jr. produce explosive strikes in the pre-dawn window. Once you can see the bottom clearly, tie on a paddletail or{" "}
+                  <NextLink href="/food" className="text-accent hover:underline">shrimp pattern</NextLink> and target redfish tailing on the flats.
+                </Text>
+                <Text variant="secondary" className="leading-relaxed">
+                  Port Aransas adds an offshore dimension. Nearshore kings cruise within a mile of the jetties. Red snapper at Port Aransas sit in 35 to 40 feet of water just 700 to 800 yards offshore - close enough that small boats can run out and be on fish in minutes. The jetties themselves hold bull redfish from late summer through early November, with the peak bull run running September through early November. Fish stack at the rocks during outgoing tides, feeding on mullet and crabs swept through the pass.
+                </Text>
+              </div>
             </div>
-          </Container>
-        </Section>
-      ))}
+          </div>
+        </Container>
+      </Section>
 
-      {/* Shop CTA */}
+      {/* Florida Panhandle */}
+      <Section id="panhandle">
+        <Container>
+          <div className="max-w-3xl space-y-10">
+            <div>
+              <SectionImage src="/images/gal-offshore-run.webp" alt="Offshore fishing boat running out of Destin" />
+              <Heading as="h2" size="4xl" className="mb-4">Florida Panhandle - Red Snapper Capital</Heading>
+              <div className="space-y-4">
+                <Text variant="secondary" className="leading-relaxed">
+                  If you want to catch red snapper, the Florida Panhandle is where you go. The federal season opens in June, and the fleet out of Destin - one of the largest charter fleets on the entire Gulf - goes full throttle. Boats stack up at the fuel dock before dawn, and by mid-morning the fish boxes are heavy. This is not a fishery you have to work hard to find. The snapper are everywhere.
+                </Text>
+                <Text variant="secondary" className="leading-relaxed">
+                  The population has expanded dramatically. Red snapper historically held at 100 to 300 feet, but years of reef building and management have pushed the range out to 50 to 600 feet. At Port Aransas, they sit in 35 to 40 feet just 700 to 800 yards from the beach. At Destin, snapper are sometimes found within 1 to 2 miles of the beach. You do not need a long run or a big boat.
+                </Text>
+                <Text variant="secondary" className="leading-relaxed">
+                  Typical Gulf red snapper run 10 to 20 pounds. Alabama waters produce 15 to 20-pound fish consistently. A 20-pound snapper measures 30 to 34 inches. The bigger fish often hold higher in the water column than you would expect - not glued to the bottom. In under 100 feet of water, fish weightless or with minimal weight to target the larger ones suspended above the structure. Drop a bait straight to the bottom and you will catch plenty of shorts and mid-range fish. Let it drift down naturally and the big ones eat first.
+                </Text>
+                <Text variant="secondary" className="leading-relaxed">
+                  Best baits: ribbonfish 1.5 to 2 feet long, hooked through the eyes. Boston mackerel. Live pinfish on a circle hook. All three produce. Ribbonfish have a slight edge on the bigger specimens because the bait profile is large enough to filter out the smaller fish.
+                </Text>
+                <Text variant="secondary" className="leading-relaxed">
+                  Beyond snapper, the Panhandle inshore is quietly excellent. Choctawhatchee Bay and Pensacola Bay hold redfish, speckled trout, and flounder on grass flats year-round. The pressure is a fraction of what you see in Texas or Tampa Bay. And the cost is lower - Destin and the Panhandle are consistently the most affordable Gulf Coast fishing destination for charter rates and lodging.
+                </Text>
+                <Text variant="secondary" className="leading-relaxed">
+                  Cobia is the other Panhandle headline. Destin is the primary port for Gulf cobia fishing. The Florida Panhandle record stands at 137 pounds. In spring, migrating pods push through the nearshore waters and you can sight-fish them from the bow of a center console. They follow manta rays - spot a ray, circle wide, and you will often find cobia swimming just behind or underneath. A 3-ounce bucktail jig in white or chartreuse is the standard presentation. Check our{" "}
+                  <NextLink href="/gear" className="text-accent hover:underline">gear guides</NextLink> for full cobia rigging specs.
+                </Text>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Alabama & Mississippi */}
+      <Section className="bg-surface-raised" id="rigs">
+        <Container>
+          <div className="max-w-3xl space-y-10">
+            <div>
+              <SectionImage src="/images/gal-dawn-boat.webp" alt="Charter boat heading out at dawn from Orange Beach" />
+              <Heading as="h2" size="4xl" className="mb-4">Alabama and Mississippi - Oil Rig Reefs</Heading>
+              <div className="space-y-4">
+                <Text variant="secondary" className="leading-relaxed">
+                  Oil and gas platforms are floating reefs. Every piling, crossbeam, and piece of submerged structure grows barnacles and algae that attract baitfish, which attract everything that eats baitfish. Red snapper, amberjack, cobia, and king mackerel stack around these platforms in numbers that make natural reefs look empty.
+                </Text>
+                <Text variant="secondary" className="leading-relaxed">
+                  A 20-mile run from Orange Beach puts you on hundreds of platforms. That is the beauty of the Alabama offshore fishery - short runs, dense structure, and aggressive fish. The rigs range from shallow nearshore platforms in 60 feet to deep-water structures in 300 feet or more. Amberjack hold mid-column on the larger rigs and will hit a vertical jig or live bait dropped to 80 to 120 feet. Red snapper surround every platform from the surface to the bottom. King mackerel cruise the perimeter, especially on the up-current side where bait concentrates.
+                </Text>
+                <Text variant="secondary" className="leading-relaxed">
+                  The nearshore structure holds fish that most people motor right over. Red snapper in Florida nearshore waters are found on small debris piles only 1 to 2 feet above the seafloor - stuff that barely shows on a depth finder. Isolated bottom rises 5 to 6 feet higher than the surrounding sand act as cities for reef fish. These spots hold snapper, triggerfish, and grouper in numbers that rival the bigger structures further out. Mark every piece of bottom change you find. The small stuff produces.
+                </Text>
+                <Text variant="secondary" className="leading-relaxed">
+                  Mobile Bay and Mississippi Sound are underrated. Solid redfish and speckled trout fishing with very little pressure compared to Florida or Texas. The marshes along the northern Gulf produce slot reds and keeper trout on popping corks and paddletails through the fall. Oyster reefs in Mobile Bay hold big trout in winter. If you want uncrowded inshore fishing on the Gulf Coast, this is it.
+                </Text>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Mosquito Lagoon & Indian River */}
+      <Section id="space-coast">
+        <Container>
+          <div className="max-w-3xl space-y-10">
+            <div>
+              <SectionImage src="/images/gal-flats-cast.webp" alt="Sight-casting on glass-calm flats near the Space Coast" />
+              <Heading as="h2" size="4xl" className="mb-4">Mosquito Lagoon and Indian River</Heading>
+              <div className="space-y-4">
+                <Text variant="secondary" className="leading-relaxed">
+                  Sight-cast tailing redfish on glass-calm flats with Kennedy Space Center in the background. That is Mosquito Lagoon. It is the best sight-fishing for redfish in Florida, and one of the best light-tackle destinations anywhere on the Gulf Coast. The lagoon is shallow - 2 to 4 feet across most of the fishable area - with clear water over dark bottom that makes spotting fish straightforward on calm mornings.
+                </Text>
+                <Text variant="secondary" className="leading-relaxed">
+                  The Indian River Lagoon adds snook, speckled trout, and tarpon to the mix. It runs 156 miles along Florida&apos;s east-central coast and connects to Mosquito Lagoon at the north end. Snook hold along mangrove shorelines and dock pilings. Trout work the grass flats on incoming tide. Tarpon push through the passes and cruise the deeper channels from May through September.
+                </Text>
+                <Text variant="secondary" className="leading-relaxed">
+                  This is a light-tackle paradise. A 7-weight fly rod or a 10-pound spinning setup is the right tool for Mosquito Lagoon redfish. The fish average 5 to 10 pounds, and you are casting to individual fish or small pods - not blind-casting into schools. Accuracy matters more than distance. A weedless gold spoon or a small shrimp fly landed 3 feet in front of a tailing red is all it takes. Paddle and pole only in the lagoon - no combustion engines allowed in most of the fishable area.
+                </Text>
+                <Text variant="secondary" className="leading-relaxed">
+                  Bull redfish hit the Florida east coast on a different schedule than Texas. Spawning starts on the first full moon in August in northeast Florida, with fish staging in deeper sections of the St. Johns River. Along the Panhandle, bulls run from Halloween through February, peaking November through December near the beaches. The Space Coast sits between these two patterns and produces oversized reds from late summer through early winter. For more Florida fishing,{" "}
+                  <NextLink href="/destinations/florida-keys" className="text-accent hover:underline">check the Keys guide</NextLink>.
+                </Text>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Month by Month */}
+      <Section className="bg-surface-raised" id="calendar">
+        <Container>
+          <div className="max-w-3xl">
+            <Heading as="h2" size="4xl" className="mb-6">Month by Month</Heading>
+            <Text variant="secondary" className="mb-8 leading-relaxed">
+              The Gulf Coast fishes twelve months a year. The species rotate by region, but something is always biting. Here is what to expect across all four regions each month.
+            </Text>
+            <div className="space-y-4">
+              {MONTH_DATA.map((m) => (
+                <div key={m.month} className="p-4 rounded-xl border border-border bg-surface/50">
+                  <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4">
+                    <Text className="font-heading font-semibold min-w-[100px]">{m.month}</Text>
+                    <div className="flex-1">
+                      <Text size="sm" className="font-medium mb-1">{m.species}</Text>
+                      <Text variant="secondary" size="sm">{m.note}</Text>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Tackle */}
+      <Section id="tackle">
+        <Container>
+          <div className="max-w-3xl space-y-10">
+            <div>
+              <Heading as="h2" size="4xl" className="mb-4">Tackle and Rigging</Heading>
+              <Text variant="secondary" className="mb-6 leading-relaxed">
+                The Gulf Coast covers four distinct fisheries. Each one demands different{" "}
+                <NextLink href="/gear" className="text-accent hover:underline">gear</NextLink>. Here are the proven setups by style.
+              </Text>
+              <div className="space-y-6">
+                <div className="p-5 rounded-xl border border-border bg-surface-raised/50">
+                  <Heading as="h3" size="xl" className="mb-3">Wade Fishing - Texas Bays</Heading>
+                  <Text variant="secondary" size="sm" className="leading-relaxed">
+                    7-foot medium-light to medium spinning rod, 2500-3000 reel. 10-15 pound braid to 20-pound fluorocarbon leader (15-pound in clear Laguna Madre water). Topwater: She Dog, Super Spook Jr., Skitter Walk in bone or chartreuse - first light only. Soft plastics: paddletail on 1/8 to 1/4 oz jig head, Bass Assassin or Saltwater Assassin in plum/chartreuse or opening night. Gold spoon (Johnson Sprite or Redfish Magic) for redfish on sand flats. Wading belt, stringer, and stingray guards mandatory.
+                  </Text>
+                </div>
+                <div className="p-5 rounded-xl border border-border bg-surface-raised/50">
+                  <Heading as="h3" size="xl" className="mb-3">Red Snapper - Offshore Platforms</Heading>
+                  <Text variant="secondary" size="sm" className="leading-relaxed">
+                    7-foot medium-heavy conventional or spinning, 30-50 pound class. 50-65 pound braid, 60-80 pound fluorocarbon leader 3-4 feet. Circle hooks 6/0-8/0 (required in Gulf federal waters for reef fish). Double-drop bottom rig or knocker rig for standard fishing. For bigger fish higher in the column, use a fishfinder rig with minimal weight or free-line live bait. Cut ribbonfish 1.5-2 ft hooked through eyes. Boston mackerel chunks. Live pinfish. Vertical jigs 4-8 oz in 100+ ft for amberjack.
+                  </Text>
+                </div>
+                <div className="p-5 rounded-xl border border-border bg-surface-raised/50">
+                  <Heading as="h3" size="xl" className="mb-3">Nearshore - Kings, Cobia, Tarpon</Heading>
+                  <Text variant="secondary" size="sm" className="leading-relaxed">
+                    King mackerel: 7-foot medium-heavy spinning, 30-pound braid, wire leader (kings have teeth), live bait on stinger rig with treble hook trailer. Slow-troll live blue runners, cigar minnows, or threadfin herring. Cobia: 7-foot medium-heavy, 30-pound braid, 50-60 pound fluoro leader, 3-5 oz bucktail jig in white or chartreuse. Sight-fish from the bow - lead the fish by 10 feet. Tarpon (passes and nearshore): 8-foot heavy spinning, 50-65 pound braid, 80-pound fluoro leader, 7/0 circle hook. Live mullet, crabs, or large pinfish.
+                  </Text>
+                </div>
+                <div className="p-5 rounded-xl border border-border bg-surface-raised/50">
+                  <Heading as="h3" size="xl" className="mb-3">Sight Fishing - Mosquito Lagoon</Heading>
+                  <Text variant="secondary" size="sm" className="leading-relaxed">
+                    Fly: 7-8 weight rod, floating line, 9-foot leader to 12-pound tippet. Small crab and shrimp patterns in tan, olive, and rust. Spinning: 7-foot medium-light, 2500 reel, 10-pound braid, 15-20 pound fluoro leader. Weedless gold spoon (1/4 oz), DOA Shrimp, or unweighted soft plastic jerk shad in natural colors. Cast 3 feet ahead of tailing fish. No combustion engines - paddle or pole only. Polarized lenses in amber or copper are essential.
+                  </Text>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Plan Your Trip */}
+      <Section className="bg-surface-raised" id="trip">
+        <Container>
+          <div className="max-w-3xl space-y-10">
+            <div>
+              <Heading as="h2" size="4xl" className="mb-4">Plan Your Trip</Heading>
+              <div className="space-y-4">
+                <Text variant="secondary" className="leading-relaxed">
+                  Texas: Fly into Houston Hobby or George Bush Intercontinental for Galveston Bay (45 minutes to the water). Corpus Christi International puts you 30 minutes from Port Aransas and within striking distance of Baffin Bay and the Laguna Madre. San Antonio is 2.5 hours from Port Aransas if you are combining trips.
+                </Text>
+                <Text variant="secondary" className="leading-relaxed">
+                  Panhandle: Fly into Pensacola (PNS) for the western Panhandle or Destin-Fort Walton Beach (VPS) for Destin and the Choctawhatchee Bay area. Both airports are small, easy, and close to the water. Panama City (ECP) works for the eastern Panhandle.
+                </Text>
+                <Text variant="secondary" className="leading-relaxed">
+                  Space Coast: Fly into Orlando (MCO). Mosquito Lagoon is 45 minutes east. Melbourne (MLB) is closer but has fewer flights. Titusville is the base camp for lagoon fishing - small town, quiet, and right on the water.
+                </Text>
+                <Text variant="secondary" className="leading-relaxed">
+                  Alabama: Fly into Mobile (MOB) or Pensacola (PNS). Orange Beach is about an hour from either airport. Mobile Bay inshore fishing is accessible straight from the city.
+                </Text>
+                <Text variant="secondary" className="leading-relaxed">
+                  Wade fishing is free. You need a state saltwater license, but you do not need a boat, a guide, or expensive gear to catch fish on the Texas coast. Charter rates vary by region and style: inshore guides run $400 to $600 per day for one to two anglers. Offshore snapper and king mackerel trips run $800 to $1,500 per day depending on boat size and how far offshore you run. Panhandle rates tend to be the lowest on the Gulf. Head boats (party boats) out of Destin run $75 to $150 per person for half-day snapper trips - the cheapest way to get offshore.
+                </Text>
+                <div className="p-5 rounded-xl border border-border bg-surface/50">
+                  <Text variant="muted" size="xs" className="uppercase tracking-widest font-heading font-semibold mb-3">Base Camps</Text>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <Text className="font-heading font-semibold text-sm mb-1">Port Aransas, TX</Text>
+                      <Text variant="secondary" size="sm">Wade fishing, jetty bulls, nearshore snapper and kings. Full-service fishing town with bait shops, guides, and charters.</Text>
+                    </div>
+                    <div>
+                      <Text className="font-heading font-semibold text-sm mb-1">Destin, FL</Text>
+                      <Text variant="secondary" size="sm">Largest Panhandle fleet. Red snapper, cobia, kings. Most affordable Gulf Coast charter destination.</Text>
+                    </div>
+                    <div>
+                      <Text className="font-heading font-semibold text-sm mb-1">Orange Beach, AL</Text>
+                      <Text variant="secondary" size="sm">Oil platform access. Red snapper and amberjack. Short offshore runs to hundreds of structures.</Text>
+                    </div>
+                    <div>
+                      <Text className="font-heading font-semibold text-sm mb-1">Titusville, FL</Text>
+                      <Text variant="secondary" size="sm">Mosquito Lagoon gateway. Sight-fishing redfish. Quiet town, serious anglers, no crowds.</Text>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      {/* More destinations */}
       <Section>
         <Container>
           <div className="max-w-3xl">
-            <div className="p-6 rounded-xl border border-border bg-surface-raised/50 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <Heading as="h2" size="4xl" className="mb-6">More Destinations</Heading>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              {[
+                { title: "Florida Keys", href: "/destinations/florida-keys", img: "/images/dest-keys.webp" },
+                { title: "North Carolina", href: "/destinations/north-carolina", img: "/images/dest-nc.webp" },
+                { title: "Bahamas", href: "/destinations/bahamas", img: "/images/dest-bahamas.webp" },
+                { title: "Louisiana", href: "/destinations/louisiana", img: "/images/dest-louisiana.webp" },
+              ].map((d) => (
+                <NextLink key={d.href} href={d.href} className="group relative rounded-xl overflow-hidden aspect-[3/4]">
+                  <img src={d.img} alt={d.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-3">
+                    <Text size="sm" className="!text-white font-heading font-semibold">{d.title}</Text>
+                  </div>
+                </NextLink>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Shop CTA */}
+      <Section className="bg-surface-raised">
+        <Container>
+          <div className="max-w-3xl">
+            <div className="p-6 rounded-xl border border-border bg-surface/50 flex flex-col sm:flex-row items-start sm:items-center gap-4">
               <div className="flex-1">
                 <Heading as="h4" size="md" className="mb-1">Gear up for the Gulf</Heading>
-                <Text variant="secondary" size="sm">Find the exact tackle for this fishery at The TackleRoom.</Text>
+                <Text variant="secondary" size="sm">Find the exact tackle for every Gulf Coast fishery at The TackleRoom.</Text>
               </div>
               <a href="https://thetackleroom.com" target="_blank" rel="noopener noreferrer" className="rounded-lg bg-accent px-6 py-2.5 font-heading font-semibold text-sm text-stone-950 hover:bg-accent-hover transition-colors whitespace-nowrap">
                 Shop Tackle &rarr;

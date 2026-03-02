@@ -7,54 +7,62 @@ import { Text } from "@/components/primitives/Text";
 export const metadata: Metadata = {
   title: "Gallery",
   description:
-    "Photos from the water. Saltwater fishing, coastal sunrises, and the moments between bites.",
+    "Photos from the water. Saltwater fishing, coastal sunrises, tight lines, and the moments between bites.",
 };
 
 const GALLERY_IMAGES = [
-  { id: 1, src: "/images/gallery-sunrise.jpg", alt: "Sunrise over the ocean from a boat", aspect: "aspect-[4/5]" },
-  { id: 2, src: "/images/gallery-flats.jpg", alt: "Shallow water flats at low tide", aspect: "aspect-square" },
-  { id: 3, src: "/images/gallery-catch.jpg", alt: "Angler holding a redfish", aspect: "aspect-[5/4]" },
-  { id: 4, src: "/images/gallery-marsh.jpg", alt: "Marsh creek at golden hour", aspect: "aspect-[4/5]" },
-  { id: 5, src: "/images/gallery-tackle.jpg", alt: "Tackle box and rods on deck", aspect: "aspect-square" },
-  { id: 6, src: "/images/gallery-waves.jpg", alt: "Waves breaking on the beach", aspect: "aspect-[5/4]" },
-  { id: 7, src: "/images/gallery-dock.jpg", alt: "Fishing dock at dawn", aspect: "aspect-[4/5]" },
-  { id: 8, src: "/images/gallery-bluewater.jpg", alt: "Deep blue offshore water", aspect: "aspect-square" },
-  { id: 9, src: "/images/gallery-birds.jpg", alt: "Pelicans diving on baitfish", aspect: "aspect-[5/4]" },
-  { id: 10, src: "/images/gallery-kayak.jpg", alt: "Kayak on calm coastal water", aspect: "aspect-[4/5]" },
-  { id: 11, src: "/images/gallery-pier.jpg", alt: "Pier fishing at sunset", aspect: "aspect-square" },
-  { id: 12, src: "/images/gallery-coast.jpg", alt: "Rocky coastline at dawn", aspect: "aspect-[5/4]" },
+  { id: 1, src: "/images/gal-dawn-boat.jpg", alt: "Fishing boat at dawn heading offshore", aspect: "aspect-[4/5]" },
+  { id: 2, src: "/images/gal-flats-cast.jpg", alt: "Fly casting on crystal clear saltwater flats", aspect: "aspect-square" },
+  { id: 3, src: "/images/gal-catch-fish.jpg", alt: "Angler holding a redfish on the flats", aspect: "aspect-[5/4]" },
+  { id: 4, src: "/images/gal-marsh-gold.jpg", alt: "Marsh creek at golden hour", aspect: "aspect-[4/5]" },
+  { id: 5, src: "/images/gal-tackle-close.jpg", alt: "Saltwater fishing reel and rod closeup", aspect: "aspect-square" },
+  { id: 6, src: "/images/gal-offshore-run.jpg", alt: "Offshore fishing boat cutting through blue water", aspect: "aspect-[5/4]" },
+  { id: 7, src: "/images/gal-sunset-boat.jpg", alt: "Fishing boat silhouetted at sunset", aspect: "aspect-[4/5]" },
+  { id: 8, src: "/images/gal-turquoise.jpg", alt: "Turquoise Bahamas water from above", aspect: "aspect-square" },
+  { id: 9, src: "/images/gal-birds-dive.jpg", alt: "Pelicans diving on baitfish at sunrise", aspect: "aspect-[5/4]" },
+  { id: 10, src: "/images/gal-kayak.jpg", alt: "Kayak fishing on calm coastal water at dawn", aspect: "aspect-[4/5]" },
+  { id: 11, src: "/images/gal-pier-sunset.jpg", alt: "Pier fishing silhouette at sunset", aspect: "aspect-square" },
+  { id: 12, src: "/images/gal-coast-rocks.jpg", alt: "Rocky coastline with crashing waves at dawn", aspect: "aspect-[5/4]" },
+  { id: 13, src: "/images/gal-fly-line.jpg", alt: "Fly line unrolling against a blue sky", aspect: "aspect-[4/5]" },
+  { id: 14, src: "/images/gal-bridge-night.jpg", alt: "Bridge lights reflecting on night water", aspect: "aspect-square" },
+  { id: 15, src: "/images/gal-wave-break.jpg", alt: "Wave breaking with morning light behind it", aspect: "aspect-[5/4]" },
 ];
 
 export default function GalleryPage() {
   return (
-    <Section>
-      <Container>
-        <div className="mb-10">
-          <Heading as="h1" size="4xl">
-            Gallery
+    <>
+      <Section spacing="xl">
+        <Container size="narrow" className="text-center">
+          <Heading as="h1" size="hero">
+            From the
+            <br />
+            <span className="text-accent">water.</span>
           </Heading>
-          <Text variant="secondary" size="lg" className="mt-3">
-            From the water. Saltwater scenes, tight lines, and the
-            moments between bites.
+          <Text variant="secondary" size="lg" className="mt-6 mx-auto">
+            Saltwater scenes, tight lines, and the moments between bites.
           </Text>
-        </div>
+        </Container>
+      </Section>
 
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
-          {GALLERY_IMAGES.map((img) => (
-            <div
-              key={img.id}
-              className={`${img.aspect} rounded-lg overflow-hidden break-inside-avoid`}
-            >
-              <img
-                src={img.src}
-                alt={img.alt}
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
-            </div>
-          ))}
-        </div>
-      </Container>
-    </Section>
+      <Section>
+        <Container>
+          <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
+            {GALLERY_IMAGES.map((img) => (
+              <div
+                key={img.id}
+                className={`${img.aspect} rounded-xl overflow-hidden break-inside-avoid group`}
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
+        </Container>
+      </Section>
+    </>
   );
 }

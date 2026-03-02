@@ -1,0 +1,282 @@
+@import "tailwindcss";
+
+/* ───────────────────────────────────────────────────────────
+   TackleRoom Supply — Design System
+   Dark-mode default, OKLCH earth tones, fluid typography
+   ─────────────────────────────────────────────────────────── */
+
+/* ── Variable Fonts ─────────────────────────────────────── */
+@font-face {
+  font-family: "Outfit";
+  src: url("/fonts/Outfit-Variable.woff2") format("woff2-variations");
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("/fonts/SourceSerif4-Variable.woff2") format("woff2-variations");
+  font-weight: 200 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+/* ── OKLCH Color Palette ────────────────────────────────── */
+:root {
+  /* Stone — neutrals */
+  --stone-50: oklch(0.97 0.003 75);
+  --stone-100: oklch(0.93 0.005 75);
+  --stone-200: oklch(0.85 0.008 75);
+  --stone-300: oklch(0.73 0.01 75);
+  --stone-400: oklch(0.55 0.012 75);
+  --stone-500: oklch(0.45 0.014 75);
+  --stone-600: oklch(0.37 0.012 75);
+  --stone-700: oklch(0.30 0.01 75);
+  --stone-800: oklch(0.23 0.008 75);
+  --stone-850: oklch(0.19 0.007 75);
+  --stone-900: oklch(0.16 0.006 75);
+  --stone-950: oklch(0.12 0.005 75);
+
+  /* Forest — green accent */
+  --forest-400: oklch(0.72 0.12 220);
+  --forest-500: oklch(0.62 0.14 220);
+  --forest-600: oklch(0.52 0.12 220);
+
+  /* Ember — campfire orange */
+  --ember-400: oklch(0.72 0.12 190);
+  --ember-500: oklch(0.62 0.14 190);
+  --ember-600: oklch(0.52 0.12 190);
+
+  /* Creek — water blue */
+  --creek-400: oklch(0.75 0.14 200);
+  --creek-500: oklch(0.65 0.16 200);
+  --creek-600: oklch(0.55 0.14 200);
+
+  /* Ridge — earthy red */
+  --ridge-400: oklch(0.70 0.10 85);
+  --ridge-500: oklch(0.60 0.12 85);
+  --ridge-600: oklch(0.50 0.10 85);
+
+  /* Semantic tokens — dark mode default */
+  --surface: var(--stone-950);
+  --surface-raised: var(--stone-900);
+  --surface-overlay: var(--stone-850);
+  --text-primary: var(--stone-50);
+  --text-secondary: var(--stone-300);
+  --text-muted: var(--stone-500);
+  --accent: var(--forest-500);
+  --accent-hover: var(--forest-400);
+  --border: var(--stone-800);
+  --border-subtle: var(--stone-850);
+  --ring: var(--forest-500);
+
+  /* Personalization hook */
+  --ambient-hue: 220;
+
+  /* Font families */
+  --font-heading: "Outfit", system-ui, sans-serif;
+  --font-body: "Source Serif 4", Georgia, "Times New Roman", serif;
+}
+
+/* Light mode override */
+.light {
+  --surface: var(--stone-50);
+  --surface-raised: var(--stone-100);
+  --surface-overlay: var(--stone-200);
+  --text-primary: var(--stone-950);
+  --text-secondary: var(--stone-700);
+  --text-muted: var(--stone-500);
+  --accent: var(--forest-600);
+  --accent-hover: var(--forest-500);
+  --border: var(--stone-200);
+  --border-subtle: var(--stone-100);
+  --ring: var(--forest-600);
+}
+
+/* ── Tailwind Theme Tokens ──────────────────────────────── */
+@theme inline {
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-surface-overlay: var(--surface-overlay);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-border: var(--border);
+  --color-border-subtle: var(--border-subtle);
+  --color-ring: var(--ring);
+
+  --color-forest-400: var(--forest-400);
+  --color-forest-500: var(--forest-500);
+  --color-forest-600: var(--forest-600);
+  --color-ember-400: var(--ember-400);
+  --color-ember-500: var(--ember-500);
+  --color-ember-600: var(--ember-600);
+  --color-creek-400: var(--creek-400);
+  --color-creek-500: var(--creek-500);
+  --color-creek-600: var(--creek-600);
+  --color-ridge-400: var(--ridge-400);
+  --color-ridge-500: var(--ridge-500);
+  --color-ridge-600: var(--ridge-600);
+  --color-stone-50: var(--stone-50);
+  --color-stone-100: var(--stone-100);
+  --color-stone-200: var(--stone-200);
+  --color-stone-300: var(--stone-300);
+  --color-stone-400: var(--stone-400);
+  --color-stone-500: var(--stone-500);
+  --color-stone-600: var(--stone-600);
+  --color-stone-700: var(--stone-700);
+  --color-stone-800: var(--stone-800);
+  --color-stone-900: var(--stone-900);
+  --color-stone-950: var(--stone-950);
+
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
+
+  /* Fluid type scale */
+  --font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --font-size-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+  --font-size-base: clamp(1rem, 0.925rem + 0.375vw, 1.125rem);
+  --font-size-lg: clamp(1.125rem, 1rem + 0.625vw, 1.375rem);
+  --font-size-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.625rem);
+  --font-size-2xl: clamp(1.5rem, 1.25rem + 1.25vw, 2.125rem);
+  --font-size-3xl: clamp(1.875rem, 1.5rem + 1.875vw, 2.75rem);
+  --font-size-4xl: clamp(2.25rem, 1.75rem + 2.5vw, 3.5rem);
+  --font-size-hero: clamp(2.75rem, 2rem + 3.75vw, 5rem);
+}
+
+/* ── Base Styles ────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  border-color: var(--border);
+}
+
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+
+.light {
+  color-scheme: light;
+}
+
+body {
+  background-color: var(--surface);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Grain texture overlay */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.03;
+  background-image: url("/textures/noise.svg");
+  background-repeat: repeat;
+  background-size: 200px;
+  mix-blend-mode: overlay;
+}
+
+/* ── Focus & Accessibility ──────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 10000;
+  padding: 0.5rem 1rem;
+  background: var(--accent);
+  color: var(--stone-950);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  border-radius: 0 0 0.5rem 0.5rem;
+  text-decoration: none;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Screen-reader only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ── Reduced Motion ─────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── Typography Defaults ────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+  max-width: 70ch;
+}
+
+/* ── Selection ──────────────────────────────────────────── */
+::selection {
+  background-color: var(--accent);
+  color: var(--stone-950);
+}
+
+/* ── Scrollbar ──────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--stone-700);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--stone-600);
+}

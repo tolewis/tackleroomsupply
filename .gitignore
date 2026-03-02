@@ -1,0 +1,27 @@
+node_modules/
+.next/
+out/
+.DS_Store
+*.log
+.env
+.env.local
+
+# Build output (served at site root, regenerated on build)
+/404.html
+/404/
+/index.html
+/index.txt
+/sitemap.xml
+/__next.*
+/_next/
+/_not-found/
+/about/
+/adventure/
+/food/
+/gallery/
+/gear/
+/fonts/
+/images/
+/textures/
+/.dh-diag
+/.htaccess

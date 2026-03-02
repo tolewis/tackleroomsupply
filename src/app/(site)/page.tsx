@@ -10,7 +10,7 @@ import { Badge } from "@/components/primitives/Badge";
 import { Button } from "@/components/primitives/Button";
 
 export const metadata: Metadata = {
-  title: "TackleRoom Supply — Saltwater Fishing Content & Gear",
+  // Uses layout default title
 };
 
 const CATEGORIES = [

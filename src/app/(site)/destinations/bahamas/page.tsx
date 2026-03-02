@@ -20,6 +20,7 @@ const SECTIONS = [
   { id: "calendar", label: "Calendar" },
   { id: "tackle", label: "Tackle" },
   { id: "trip", label: "Plan Your Trip" },
+  { id: "regs", label: "Regulations" },
 ];
 
 const MONTH_DATA = [
@@ -336,8 +337,36 @@ export default function BahamasPage() {
         </Container>
       </Section>
 
+      {/* Conservation and Regulations */}
+      <Section id="regs">
+        <Container>
+          <div className="max-w-3xl space-y-10">
+            <div>
+              <Heading as="h2" size="4xl" className="mb-4">Conservation and Regulations</Heading>
+              <div className="space-y-4">
+                <Text variant="secondary" className="leading-relaxed">
+                  The Bahamas take fishery conservation seriously, and the rules are enforced. Foreign visitors must understand the permit requirements before arriving.
+                </Text>
+                <Text variant="secondary" className="leading-relaxed">
+                  <strong>Foreign Fishing Permit:</strong> All non-Bahamian visitors must purchase a foreign fishing permit before fishing. Permits are available through the Bahamas Department of Marine Resources. Fishing without a permit carries significant fines. Your lodge or charter captain can usually arrange this, but confirm before you arrive.
+                </Text>
+                <Text variant="secondary" className="leading-relaxed">
+                  <strong>Bonefish:</strong> Catch-and-release is required on many flats across the islands. Even where harvest is technically permitted, the lodge and guiding culture is firmly catch-and-release. Handle bonefish with wet hands, keep them in the water, and revive fully before release. The Bahamas National Trust and Bonefish and Tarpon Trust run active tagging programs.
+                </Text>
+                <Text variant="secondary" className="leading-relaxed">
+                  <strong>Bag Limits:</strong> Limits vary by island and species. General limits for visitors include 6 reef fish per person per day (combined species), and specific limits on conch and lobster. Nassau grouper has a closed season from December through February to protect spawning aggregations. Spearfishing is prohibited within 200 yards of any shoreline, and the use of spearguns by foreign visitors is heavily restricted.
+                </Text>
+                <Text variant="secondary" className="leading-relaxed">
+                  <strong>Marine Protected Areas:</strong> The Bahamas has established multiple no-take marine reserves. The Exuma Cays Land and Sea Park is the oldest marine park in the Caribbean - no fishing or harvesting of any kind is permitted within its boundaries. Check current Bahamas Department of Marine Resources regulations and confirm any local restrictions with your guide.
+                </Text>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
       {/* More destinations */}
-      <Section>
+      <Section className="bg-surface-raised">
         <Container>
           <div className="max-w-3xl">
             <Heading as="h2" size="4xl" className="mb-6">More Destinations</Heading>

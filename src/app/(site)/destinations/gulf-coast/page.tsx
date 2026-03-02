@@ -20,6 +20,7 @@ const SECTIONS = [
   { id: "calendar", label: "Calendar" },
   { id: "tackle", label: "Tackle" },
   { id: "trip", label: "Plan Your Trip" },
+  { id: "regs", label: "Regulations" },
 ];
 
 const MONTH_DATA = [
@@ -355,8 +356,36 @@ export default function GulfCoastPage() {
         </Container>
       </Section>
 
+      {/* Conservation and Regulations */}
+      <Section id="regs">
+        <Container>
+          <div className="max-w-3xl space-y-10">
+            <div>
+              <Heading as="h2" size="4xl" className="mb-4">Conservation and Regulations</Heading>
+              <div className="space-y-4">
+                <Text variant="secondary" className="leading-relaxed">
+                  The Gulf Coast spans multiple states, each with its own regulations. Federal waters (beyond 9 nautical miles) add another layer. Know which jurisdiction you are fishing in before you launch.
+                </Text>
+                <Text variant="secondary" className="leading-relaxed">
+                  <strong>Red Snapper:</strong> Federal red snapper season dates are set annually by NOAA and typically open in June. State seasons vary - Texas has a year-round state-water season, Alabama runs an extended season through a state reef fish program, and Florida sets separate Gulf and Atlantic seasons. Bag limits are typically 2 fish per person per day with a 16-inch minimum in federal waters. Check the specific season dates for the state you are fishing - they change every year.
+                </Text>
+                <Text variant="secondary" className="leading-relaxed">
+                  <strong>Circle Hook Requirement:</strong> Circle hooks are required when fishing with natural bait for reef fish in Gulf federal waters. This includes red snapper, grouper, amberjack, and triggerfish. Non-offset circle hooks reduce gut-hooking mortality by more than 50%. Dehooking tools and venting tools are also required gear on board.
+                </Text>
+                <Text variant="secondary" className="leading-relaxed">
+                  <strong>Redfish and Trout:</strong> Regulations vary significantly by state. Texas allows 3 redfish per day (20-28 inch slot) and 5 speckled trout (15-inch minimum). Florida allows 1 redfish per day (18-27 inch slot) and 4 speckled trout (15-inch minimum in most areas). Alabama and Mississippi have their own limits. CCA Texas and CCA Florida are the primary conservation organizations funding habitat restoration and fishery research.
+                </Text>
+                <Text variant="secondary" className="leading-relaxed">
+                  <strong>Tarpon:</strong> Tarpon are catch-and-release only in Florida. A special tarpon tag ($50) is required if you intend to temporarily possess a tarpon for photos - the fish must not be removed from the water if it exceeds 40 inches. Always check current regulations for each state before your trip. Licenses, season dates, and bag limits change frequently across all Gulf states.
+                </Text>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
       {/* More destinations */}
-      <Section>
+      <Section className="bg-surface-raised">
         <Container>
           <div className="max-w-3xl">
             <Heading as="h2" size="4xl" className="mb-6">More Destinations</Heading>

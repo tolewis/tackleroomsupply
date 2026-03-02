@@ -20,6 +20,7 @@ const SECTIONS = [
   { id: "calendar", label: "Calendar" },
   { id: "tackle", label: "Tackle" },
   { id: "trip", label: "Plan Your Trip" },
+  { id: "regs", label: "Regulations" },
 ];
 
 const MONTH_DATA = [
@@ -154,6 +155,9 @@ export default function NorthCarolinaPage() {
               <Text variant="secondary" className="leading-relaxed">
                 Summer and fall bring yellowfin tuna, wahoo, and mahi on the Gulf Stream edge. King mackerel run thick from May through October. Larger mahi arrive off North Carolina in April and May. Billfish tournaments run through the summer. The offshore season here is not a two-month window - it is a rotating calendar from January through December.
               </Text>
+              <Text variant="secondary" className="leading-relaxed">
+                A standard NC trolling spread runs 5-7 lines. Long riggers carry skirted ballyhoo or large Ilander lures for billfish and wahoo. Short riggers run smaller skirted ballyhoo for mahi and yellowfin. Flat lines pull diving plugs like the Rapala CD 18 or Halco Laser Pro 190 just under the surface wash. A shotgun line far back off the center rigger with a cedar plug or naked ballyhoo picks up wahoo that shy away from the spread. For yellowfin specifically, chunking butterfish or cut sardines creates a chum slick that holds schools behind the boat once you locate them on the temperature break. Slow-trolling live mackerel on 1.5-ounce jigheads with 8-inch soft plastic split-tails produces big yellowfin when the fish are feeding deep along the edge.
+              </Text>
             </div>
           </div>
         </Container>
@@ -181,6 +185,12 @@ export default function NorthCarolinaPage() {
               </Text>
               <Text variant="secondary" className="leading-relaxed">
                 Red drum hold in 2-3 feet of water near shell and sand spits, tidal sloughs, and channel edges. Inshore reds respond to gold spinners, 1/4-ounce jig heads with paddletails, and popping corks in 3-6 foot stained water. For marsh fishing: 7-foot medium rod, 10-pound braid, 20-pound fluoro leader. In winter, slow your retrieve - reds will not chase fast-moving bait in cold water.
+              </Text>
+              <Text variant="secondary" className="leading-relaxed">
+                Wade fishing for red drum in the sounds is outstanding and underrated. The Pamlico and Neuse River flats are wadeable at low tide, with firm sand and shell bottom in 1-3 feet of water. Work the edges of oyster bars and grass beds where reds push up to feed on falling water. Gold spoons and soft plastics on 1/4-ounce jig heads are the standard wade tools. Move slow, watch for wakes and tails, and cast ahead of moving fish. Wade-accessible flats around Oriental and Minnesott Beach produce slot reds consistently from April through November.
+              </Text>
+              <Text variant="secondary" className="leading-relaxed">
+                Fly fishing the North Carolina sounds is exceptional. The Pamlico Sound flats hold speckled trout that respond well to Clouser Minnows and EP baitfish patterns on a 7-8 weight fly rod. False albacore arrive in the fall and provide the best saltwater fly fishing on the East Coast - schools of albies blitz bait along the beaches from Cape Lookout to Ocracoke from late September through November. A 9-weight rod with an intermediate sink-tip line and small white Clouser or Surf Candy is the standard setup. Red drum sight-casting on fly is possible on the sound-side flats when conditions are calm and clear. An 8-weight rod with weedless crab and shrimp patterns in copper and tan covers most inshore fly situations.
               </Text>
             </div>
           </div>
@@ -307,8 +317,36 @@ export default function NorthCarolinaPage() {
         </Container>
       </Section>
 
+      {/* Conservation and Regulations */}
+      <Section id="regs">
+        <Container>
+          <div className="max-w-3xl space-y-10">
+            <div>
+              <Heading as="h2" size="4xl" className="mb-4">Conservation and Regulations</Heading>
+              <div className="space-y-4">
+                <Text variant="secondary" className="leading-relaxed">
+                  North Carolina has strong fishery management backed by active conservation organizations. Know the rules before you hit the water.
+                </Text>
+                <Text variant="secondary" className="leading-relaxed">
+                  <strong>Red Drum:</strong> Slot limit is 18 to 27 inches in most NC waters, with a daily bag limit of 1 fish. In some areas the slot extends to 18-27 inches with catch-and-release required for all oversized fish. Large drum over 27 inches must be released immediately. The Outer Banks drum run is almost entirely catch-and-release given the size of the fish. CCA North Carolina and the NC Division of Marine Fisheries actively manage the red drum population through tagging programs and season adjustments.
+                </Text>
+                <Text variant="secondary" className="leading-relaxed">
+                  <strong>Speckled Trout:</strong> Daily bag limit is 4 fish, minimum 14 inches. The limit was reduced from 6 to 4 in recent years to protect the breeding population. Trophy trout over 20 inches are disproportionately important to reproduction. Many experienced anglers practice catch-and-release on fish over 5 pounds.
+                </Text>
+                <Text variant="secondary" className="leading-relaxed">
+                  <strong>Flounder:</strong> Season dates and limits change frequently. Check NCDMF regulations before every trip. The fishery has been under increasing management pressure. Minimum size is 15 inches with a daily limit that varies by season.
+                </Text>
+                <Text variant="secondary" className="leading-relaxed">
+                  <strong>Offshore:</strong> Federal regulations apply beyond 3 nautical miles. Circle hooks are required when fishing with natural bait for reef fish in South Atlantic federal waters. Bluefin tuna are managed under strict NOAA quotas with catch reporting requirements. Always check current NC Division of Marine Fisheries regulations before your trip - season dates and bag limits change annually.
+                </Text>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
       {/* More destinations */}
-      <Section>
+      <Section className="bg-surface-raised">
         <Container>
           <div className="max-w-3xl">
             <Heading as="h2" size="4xl" className="mb-6">More Destinations</Heading>

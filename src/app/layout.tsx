@@ -11,10 +11,29 @@ export const metadata: Metadata = {
   description:
     "Saltwater fishing content, honest gear reviews, and coastal stories. Inshore, offshore, and everything that bites.",
   metadataBase: new URL("https://tackleroomsupply.com"),
+  icons: {
+    icon: [
+      {
+        url: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎣</text></svg>",
+        type: "image/svg+xml",
+      },
+    ],
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
     siteName: "TackleRoom Supply",
+    images: [
+      {
+        url: "/images/hero-coastal.jpg",
+        width: 1600,
+        height: 900,
+        alt: "TackleRoom Supply — Saltwater Fishing Content",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
   },
 };
 

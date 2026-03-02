@@ -1,7 +1,7 @@
 import { readdirSync, statSync, writeFileSync } from "fs";
 import { join, relative } from "path";
 
-const BASE_URL = "https://unhookoutdoors.com";
+const BASE_URL = "https://tackleroomsupply.com";
 const OUT_DIR = join(process.cwd(), "out");
 
 function getPages(dir, pages = []) {

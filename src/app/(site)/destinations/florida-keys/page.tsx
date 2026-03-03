@@ -111,13 +111,7 @@ export default function FloridaKeysPage() {
               </div>
             </div>
           </div>
-        </Container>
-      </Section>
-
-      {/* Intro */}
-      <Section>
-        <Container>
-          <div className="max-w-3xl space-y-6">
+          <div className="max-w-3xl space-y-6 mt-10">
             <Text variant="secondary" size="lg" className="leading-relaxed">
               From Key Largo to Key West, the Florida Keys offer the most diverse saltwater fishing on Earth. That is not marketing copy. Within a single day&apos;s run you can sight-cast to tailing{" "}
               <NextLink href="/food" className="text-accent hover:underline">bonefish</NextLink> on ankle-deep turtle grass, drift live crabs to 150-pound tarpon rolling in a channel, drop a swordfish bait 1,000 feet into the abyss, and troll ballyhoo along a weed line stacked with mahi. No other fishery in the Western Hemisphere puts that range within reach of one dock.

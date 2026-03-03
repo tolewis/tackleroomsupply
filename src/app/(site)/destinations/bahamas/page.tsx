@@ -77,7 +77,7 @@ export default function BahamasPage() {
         <Container>
           <div className="flex gap-3 py-3 overflow-x-auto no-scrollbar">
             {SECTIONS.map((s) => (
-              <a key={s.id} href={`#${s.id}`} className="whitespace-nowrap rounded-full border border-border px-4 py-1.5 text-sm font-heading font-medium text-text-secondary hover:text-accent hover:border-accent transition-colors">
+              <a key={s.id} href={`#${s.id}`} className="whitespace-nowrap rounded-full border border-accent/40 bg-accent/5 px-4 py-1.5 text-sm font-heading font-medium text-accent hover:bg-accent/15 hover:border-accent transition-colors">
                 {s.label}
               </a>
             ))}
@@ -108,13 +108,7 @@ export default function BahamasPage() {
               </div>
             </div>
           </div>
-        </Container>
-      </Section>
-
-      {/* Intro */}
-      <Section>
-        <Container>
-          <div className="max-w-3xl space-y-6">
+          <div className="max-w-3xl space-y-6 mt-10">
             <Text variant="secondary" size="lg" className="leading-relaxed">
               The Bahamas sit on the edge of the Atlantic in water so clear you can count scales at 40 feet. Seven hundred islands spread across 100,000 square miles of ocean, and most of them are empty. The fishing pressure here is a fraction of what you find in the Keys or along the Gulf Coast.{" "}
               <NextLink href="/food" className="text-accent hover:underline">Bonefish</NextLink> populations are healthy and growing. Blue marlin cruise water that drops from 30 feet to 6,000 in a single boat length. Wahoo run to 200 pounds off islands most anglers have never heard of.

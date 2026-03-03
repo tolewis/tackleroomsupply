@@ -67,7 +67,7 @@ export default function NorthCarolinaPage() {
         <Container>
           <div className="flex gap-3 py-3 overflow-x-auto no-scrollbar">
             {SECTIONS.map((s) => (
-              <a key={s.id} href={`#${s.id}`} className="whitespace-nowrap rounded-full border border-border px-4 py-1.5 text-sm font-heading font-medium text-text-secondary hover:text-accent hover:border-accent transition-colors">{s.label}</a>
+              <a key={s.id} href={`#${s.id}`} className="whitespace-nowrap rounded-full border border-accent/40 bg-accent/5 px-4 py-1.5 text-sm font-heading font-medium text-accent hover:bg-accent/15 hover:border-accent transition-colors">{s.label}</a>
             ))}
           </div>
         </Container>
@@ -96,13 +96,7 @@ export default function NorthCarolinaPage() {
               </div>
             </div>
           </div>
-        </Container>
-      </Section>
-
-      {/* Intro */}
-      <Section>
-        <Container>
-          <div className="max-w-3xl space-y-6">
+          <div className="max-w-3xl space-y-6 mt-10">
             <Text variant="secondary" size="lg" className="leading-relaxed">
               The North Carolina coast is the most underrated saltwater fishery on the East Coast. The Outer Banks put you within reach of giant{" "}
               <NextLink href="/food" className="text-accent hover:underline">red drum</NextLink> in the fall, bluefin tuna in the winter, and everything in between. From Hatteras to Wrightsville Beach, this coastline delivers world-class fishing across every style - surf, pier, inshore, and offshore.

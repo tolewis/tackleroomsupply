@@ -77,7 +77,7 @@ export default function GulfCoastPage() {
         <Container>
           <div className="flex gap-3 py-3 overflow-x-auto no-scrollbar">
             {SECTIONS.map((s) => (
-              <a key={s.id} href={`#${s.id}`} className="whitespace-nowrap rounded-full border border-border px-4 py-1.5 text-sm font-heading font-medium text-text-secondary hover:text-accent hover:border-accent transition-colors">
+              <a key={s.id} href={`#${s.id}`} className="whitespace-nowrap rounded-full border border-accent/40 bg-accent/5 px-4 py-1.5 text-sm font-heading font-medium text-accent hover:bg-accent/15 hover:border-accent transition-colors">
                 {s.label}
               </a>
             ))}
@@ -108,13 +108,7 @@ export default function GulfCoastPage() {
               </div>
             </div>
           </div>
-        </Container>
-      </Section>
-
-      {/* Intro */}
-      <Section>
-        <Container>
-          <div className="max-w-3xl space-y-6">
+          <div className="max-w-3xl space-y-6 mt-10">
             <Text variant="secondary" size="lg" className="leading-relaxed">
               The Gulf of Mexico is the largest fishery in America. From the skinny water of Mosquito Lagoon to the oil platforms off Port Aransas, this coast covers more species, more styles, and more accessible water than any other region in the country. Wade fishers in Texas. Snapper boats out of Destin. Sight-casters on the Space Coast poling glass-calm flats with Kennedy Space Center in the background. It is all Gulf Coast, and it all fishes year-round.
             </Text>

@@ -77,7 +77,7 @@ export default function LouisianaPage() {
         <Container>
           <div className="flex gap-3 py-3 overflow-x-auto no-scrollbar">
             {SECTIONS.map((s) => (
-              <a key={s.id} href={`#${s.id}`} className="whitespace-nowrap rounded-full border border-border px-4 py-1.5 text-sm font-heading font-medium text-text-secondary hover:text-accent hover:border-accent transition-colors">
+              <a key={s.id} href={`#${s.id}`} className="whitespace-nowrap rounded-full border border-accent/40 bg-accent/5 px-4 py-1.5 text-sm font-heading font-medium text-accent hover:bg-accent/15 hover:border-accent transition-colors">
                 {s.label}
               </a>
             ))}
@@ -108,13 +108,7 @@ export default function LouisianaPage() {
               </div>
             </div>
           </div>
-        </Container>
-      </Section>
-
-      {/* Intro */}
-      <Section>
-        <Container>
-          <div className="max-w-3xl space-y-6">
+          <div className="max-w-3xl space-y-6 mt-10">
             <Text variant="secondary" size="lg" className="leading-relaxed">
               Louisiana holds thousands of miles of bayous, cuts, pipeline canals, and flooded grass flats that together form the densest red drum population on the planet. The Mississippi River dumps nutrient-rich sediment into a labyrinth of brackish marsh that feeds everything from juvenile shrimp to 40-lb bull redfish. This is not a fishery you visit once. It is a fishery that ruins every other fishery for you.
             </Text>

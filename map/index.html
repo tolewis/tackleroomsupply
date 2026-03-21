@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Fishing Regions Map — Destinations & Target Species | The Tackle Room</title>
+  <meta name="description" content="Explore world-class saltwater fishing regions first, then drill into destination pins or fish targets. Browse marlin, sailfish, tuna, bonefish and more on The Tackle Room's interactive map.">
+  <link rel="canonical" href="https://thetackleroom.com/map/">
+  <link rel="icon" type="image/svg+xml" href="img/og-map-v05.svg">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Interactive Fishing Regions Map — The Tackle Room">
+  <meta property="og:description" content="Start by region, then explore destination pins or target species across world-class saltwater fisheries.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thetackleroom.com/map/">
+  <meta property="og:image" content="https://thetackleroom.com/map/img/og-map-v05.svg">
+  <meta property="og:site_name" content="The Tackle Room">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Interactive Fishing Regions Map — The Tackle Room">
+  <meta name="twitter:description" content="Browse fishing regions first, then switch between destination pins and fish targets.">
+  <meta name="twitter:image" content="https://thetackleroom.com/map/img/og-map-v05.svg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Interactive Fishing Regions Map",
+    "url": "https://thetackleroom.com/map/",
+    "description": "Interactive saltwater fishing map organized by region first, then by destination or target species.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "The Tackle Room",
+      "url": "https://thetackleroom.com/"
+    },
+    "about": [
+      "Saltwater fishing destinations",
+      "Fishing regions",
+      "Billfish destinations",
+      "Tuna destinations",
+      "Bonefish destinations"
+    ]
+  }
+  </script>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <!-- MarkerCluster CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+
+  <link rel="stylesheet" href="css/map.css">
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <!-- MarkerCluster JS -->
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+  <!-- Fuse.js -->
+  <script src="https://unpkg.com/fuse.js@7.0.0/dist/fuse.min.js"></script>
+</head>
+<body>
+  <div id="map-section">
+    <div id="map"></div>
+
+    <aside class="region-panel" aria-label="Region navigation">
+      <div class="region-panel-card">
+        <p class="panel-kicker">Map v0.5</p>
+        <h1 class="panel-title">Explore fishing regions first.</h1>
+        <p class="panel-copy">Pick a region, then switch between destination pins and fish-target markers. Same map, less chaos.</p>
+
+        <div class="panel-controls">
+          <button id="reset-region" class="panel-btn panel-btn-secondary">All regions</button>
+          <div class="view-toggle" role="tablist" aria-label="Explore region by">
+            <button id="mode-destinations" class="mode-btn active" type="button" data-mode="destinations">Destination pins</button>
+            <button id="mode-fish" class="mode-btn" type="button" data-mode="fish">Fish targets</button>
+          </div>
+        </div>
+
+        <div id="region-summary" class="region-summary">
+          <p class="summary-eyebrow">Current view</p>
+          <h2>Select a region</h2>
+          <p>Start with a fishing region to focus the map. You can still layer species, type, season, and search filters on top.</p>
+          <div class="summary-stats">
+            <span><strong id="summary-destinations">27</strong> destinations</span>
+            <span><strong id="summary-species">12</strong> species</span>
+          </div>
+        </div>
+
+        <div>
+          <label class="filter-label" for="region-quick-jump">Region quick-jump</label>
+          <div id="region-quick-jump" class="region-quick-jump"></div>
+        </div>
+      </div>
+    </aside>
+
+    <div id="filter-panel" class="filter-panel">
+      <button id="filter-toggle" class="filter-toggle" aria-label="Toggle filters">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M2 4h16M5 10h10M8 16h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span>Filters</span>
+      </button>
+
+      <div id="filter-body" class="filter-body">
+        <div class="filter-group">
+          <div class="search-wrap">
+            <svg class="search-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="6.5" cy="6.5" r="5.5" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M11 11l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <input type="text" id="search-input" placeholder="Search destinations or species..." autocomplete="off">
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <label class="filter-label">Species</label>
+          <div id="species-filters" class="filter-chips"></div>
+        </div>
+
+        <div class="filter-group">
+          <label class="filter-label">Fishing Type</label>
+          <div id="type-filters" class="filter-chips"></div>
+        </div>
+
+        <div class="filter-group">
+          <label class="filter-label">Difficulty <span id="diff-display">1–5</span></label>
+          <div class="range-wrap">
+            <input type="range" id="diff-min" min="1" max="5" value="1" step="1">
+            <input type="range" id="diff-max" min="1" max="5" value="5" step="1">
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <label class="filter-label">Best Month</label>
+          <div id="month-filters" class="month-grid"></div>
+        </div>
+
+        <button id="clear-filters" class="clear-btn">Clear All Filters</button>
+      </div>
+    </div>
+
+    <div id="popover" class="popover hidden">
+      <button id="popover-close" class="popover-close" aria-label="Close">&times;</button>
+      <div id="popover-thumb" class="popover-thumb"></div>
+      <div id="popover-kind" class="popover-kind"></div>
+      <h3 id="popover-title" class="popover-title"></h3>
+      <p id="popover-subtitle" class="popover-subtitle"></p>
+      <div id="popover-tags" class="popover-tags"></div>
+      <p id="popover-teaser" class="popover-teaser"></p>
+      <div class="popover-meta">
+        <div id="popover-meta-left" class="popover-meta-block"></div>
+        <div id="popover-meta-right" class="popover-meta-block popover-meta-right"></div>
+      </div>
+      <button id="popover-cta" class="popover-cta">Explore <span class="cta-arrow">&darr;</span></button>
+    </div>
+  </div>
+
+  <div id="content-section" class="content-section">
+    <div id="content-area" class="content-area">
+      <div class="content-welcome">
+        <p class="panel-kicker">Interactive Fishing Map</p>
+        <h2>Regions first. Then destinations or target species.</h2>
+        <p>Choose a region above to focus the map. From there you can hunt specific destination pins like Key West or switch to fish targets like marlin, tuna, bonefish, and GT.</p>
+        <div class="content-stats">
+          <div class="stat"><span class="stat-num" id="stat-destinations">27</span><span class="stat-label">Destinations</span></div>
+          <div class="stat"><span class="stat-num" id="stat-species">12</span><span class="stat-label">Species</span></div>
+          <div class="stat"><span class="stat-num" id="stat-regions">13</span><span class="stat-label">Regions</span></div>
+        </div>
+      </div>
+    </div>
+    <button id="back-to-map" class="back-to-map hidden">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M8 12V4M4 8l4-4 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Back to Map
+    </button>
+  </div>
+
+  <noscript>
+    <div style="padding:2rem;max-width:800px;margin:auto;color:#c8d6e5">
+      <h1>Fishing Regions & Destinations</h1>
+      <p>Browse regions first, then drill into destinations and species.</p>
+      <ul>
+        <li>Bahamas</li>
+        <li>Caribbean</li>
+        <li>Mid-Atlantic Canyons &amp; Striper Coast</li>
+        <li>Outer Banks, NC</li>
+        <li>Carolina Gulf Stream</li>
+        <li>South Florida Sailfish Coast</li>
+        <li>Florida Keys</li>
+        <li>US Gulf Coast</li>
+        <li>Central America</li>
+        <li>South America</li>
+        <li>Atlantic Islands</li>
+        <li>Pacific</li>
+        <li>Indian Ocean</li>
+      </ul>
+    </div>
+  </noscript>
+
+  <script src="js/app.js" type="module"></script>
+</body>
+</html>

@@ -16,6 +16,8 @@ const footerNav = [
     links: [
       { label: "About", href: "/about" },
       { label: "Shop at TackleRoom", href: "https://thetackleroom.com" },
+      { label: "Privacy Policy", href: "/pages/privacy-policy" },
+      { label: "Terms of Service", href: "/pages/terms-of-service" },
     ],
   },
 ];

@@ -1,0 +1,1223 @@
+{
+  "destinations": [
+    {
+      "id": "bimini",
+      "title": "Bimini, Bahamas",
+      "subtitle": "Billfish Capital of the World",
+      "lat": 25.7267,
+      "lng": -79.2667,
+      "species": [
+        "marlin",
+        "sailfish",
+        "mahi",
+        "bonefish"
+      ],
+      "type": [
+        "offshore",
+        "flats",
+        "fly"
+      ],
+      "difficulty": 3,
+      "best_months": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "teaser": "60 miles east of Miami on the edge of the Gulf Stream. Schoolie dolphin to blue marlin offshore, world-class bonefishing on the flats.",
+      "thumbnail": "img/thumbs/bimini.webp",
+      "content_file": "content/bimini.html",
+      "region": "bahamas"
+    },
+    {
+      "id": "andros",
+      "title": "Andros Island, Bahamas",
+      "subtitle": "Bonefish Capital of the World",
+      "lat": 24.7,
+      "lng": -77.77,
+      "species": [
+        "bonefish",
+        "marlin",
+        "sailfish"
+      ],
+      "type": [
+        "flats",
+        "fly",
+        "offshore"
+      ],
+      "difficulty": 2,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "teaser": "The largest island in the Bahamas and the undisputed bonefish capital. Miles of pristine flats with fish averaging 3-5 pounds.",
+      "thumbnail": "img/thumbs/andros.webp",
+      "content_file": "content/andros.html",
+      "region": "bahamas"
+    },
+    {
+      "id": "nassau",
+      "title": "Nassau, Bahamas",
+      "subtitle": "Gateway to the Out Islands",
+      "lat": 25.048,
+      "lng": -77.3554,
+      "species": [
+        "sailfish",
+        "marlin",
+        "wahoo",
+        "bonefish"
+      ],
+      "type": [
+        "offshore",
+        "flats",
+        "fly",
+        "inshore"
+      ],
+      "difficulty": 2,
+      "best_months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        11,
+        12
+      ],
+      "teaser": "Easy access from the US with a full-service charter fleet. Offshore billfish grounds within 30 minutes, bonefishing on the western flats.",
+      "thumbnail": "img/thumbs/nassau.webp",
+      "content_file": "content/nassau.html",
+      "region": "bahamas"
+    },
+    {
+      "id": "grand-bahama",
+      "title": "Grand Bahama Island",
+      "subtitle": "Wahoo Alley & Flats Paradise",
+      "lat": 26.5285,
+      "lng": -78.646,
+      "species": [
+        "wahoo",
+        "tuna",
+        "marlin",
+        "sailfish",
+        "bonefish"
+      ],
+      "type": [
+        "offshore",
+        "flats",
+        "fly"
+      ],
+      "difficulty": 2,
+      "best_months": [
+        11,
+        12,
+        1,
+        2,
+        3,
+        4
+      ],
+      "teaser": "Wahoo off West End, yellowfin and marlin south of Lucaya, world-class bonefishing on the east end. All within a short flight from Florida.",
+      "thumbnail": "img/thumbs/grand-bahama.webp",
+      "content_file": "content/grand-bahama.html",
+      "region": "bahamas"
+    },
+    {
+      "id": "cat-island",
+      "title": "Cat Island, Bahamas",
+      "subtitle": "Off the Beaten Path",
+      "lat": 24.3866,
+      "lng": -75.5304,
+      "species": [
+        "sailfish",
+        "marlin",
+        "wahoo",
+        "bonefish"
+      ],
+      "type": [
+        "offshore",
+        "flats",
+        "inshore"
+      ],
+      "difficulty": 3,
+      "best_months": [
+        11,
+        12,
+        1,
+        2,
+        3,
+        4
+      ],
+      "teaser": "Remote, uncrowded, and packed with fish. Hawk's Nest Resort is your base for offshore billfish and wade fishing on pristine flats.",
+      "thumbnail": "img/thumbs/cat-island.webp",
+      "content_file": "content/cat-island.html",
+      "region": "bahamas"
+    },
+    {
+      "id": "long-island",
+      "title": "Long Island, Bahamas",
+      "subtitle": "Southern Bahamas Gem",
+      "lat": 23.1,
+      "lng": -75.09,
+      "species": [
+        "marlin",
+        "sailfish",
+        "tuna",
+        "wahoo",
+        "bonefish"
+      ],
+      "type": [
+        "offshore",
+        "flats",
+        "fly"
+      ],
+      "difficulty": 4,
+      "best_months": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "teaser": "Flying Fish Marina at Clarence Town is the southernmost full-service stop in the Bahamas. Great pelagics off the northern tip, bonefishing on the western shore.",
+      "thumbnail": "img/thumbs/long-island.webp",
+      "content_file": "content/long-island.html",
+      "region": "bahamas"
+    },
+    {
+      "id": "ocean-city-md",
+      "title": "Ocean City, Maryland",
+      "subtitle": "White Marlin Capital of the World",
+      "lat": 38.3365,
+      "lng": -75.0849,
+      "species": [
+        "marlin",
+        "tuna",
+        "sailfish",
+        "striped-bass",
+        "bluefish"
+      ],
+      "type": [
+        "offshore",
+        "inshore",
+        "surf"
+      ],
+      "difficulty": 3,
+      "best_months": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "teaser": "Home of the White Marlin Open \u2014 the world's largest billfish tournament. Canyon runs for marlin and tuna, plus inshore rockfish and flounder.",
+      "thumbnail": "img/thumbs/ocean-city-md.webp",
+      "content_file": "content/ocean-city-md.html",
+      "region": "mid-atlantic-canyons"
+    },
+    {
+      "id": "tahiti",
+      "title": "Tahiti, French Polynesia",
+      "subtitle": "Where Zane Grey Fished",
+      "lat": -17.6797,
+      "lng": -149.4068,
+      "species": [
+        "marlin",
+        "tuna",
+        "wahoo",
+        "gt"
+      ],
+      "type": [
+        "offshore"
+      ],
+      "difficulty": 5,
+      "best_months": [
+        11,
+        12,
+        1,
+        2,
+        3,
+        4
+      ],
+      "teaser": "Site of the first 1,000-lb marlin in 1930. Tuamotu atolls and Austral Islands offer some of the most remote blue-water fishing on Earth.",
+      "thumbnail": "img/thumbs/tahiti.webp",
+      "content_file": "content/tahiti.html",
+      "region": "pacific"
+    },
+    {
+      "id": "tropic-star",
+      "title": "Tropic Star Lodge, Panama",
+      "subtitle": "Zane Grey Reef",
+      "lat": 7.5303,
+      "lng": -78.197,
+      "species": [
+        "marlin",
+        "sailfish",
+        "tuna",
+        "roosterfish",
+        "snapper"
+      ],
+      "type": [
+        "offshore",
+        "inshore"
+      ],
+      "difficulty": 4,
+      "best_months": [
+        1,
+        2,
+        3,
+        5,
+        6
+      ],
+      "teaser": "100 miles from the nearest road in Panama's Darien jungle. Zane Grey Reef sits 5 miles offshore \u2014 black marlin, sailfish, and roosterfish in staggering numbers.",
+      "thumbnail": "img/thumbs/tropic-star.webp",
+      "content_file": "content/tropic-star.html",
+      "region": "central-america"
+    },
+    {
+      "id": "kona",
+      "title": "Kona, Hawaii",
+      "subtitle": "Grander Capital",
+      "lat": 19.64,
+      "lng": -156.0,
+      "species": [
+        "marlin",
+        "tuna",
+        "mahi",
+        "wahoo"
+      ],
+      "type": [
+        "offshore"
+      ],
+      "difficulty": 3,
+      "best_months": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "teaser": "166 granders and 9 World Cup victories. Deep blue water within a mile of shore \u2014 no canyon runs needed. The benchmark for Pacific blue marlin fishing.",
+      "thumbnail": "img/thumbs/kona.webp",
+      "content_file": "content/kona.html",
+      "region": "pacific"
+    },
+    {
+      "id": "bermuda",
+      "title": "Bermuda",
+      "subtitle": "Challenger Bank Blue Marlin",
+      "lat": 32.3078,
+      "lng": -64.7505,
+      "species": [
+        "marlin",
+        "tuna",
+        "wahoo"
+      ],
+      "type": [
+        "offshore"
+      ],
+      "difficulty": 4,
+      "best_months": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "teaser": "8 World Cup wins and 19 granders on the books. Challenger Bank and Argus Bank produce some of the largest blue marlin in the Atlantic.",
+      "thumbnail": "img/thumbs/bermuda.webp",
+      "content_file": "content/bermuda.html",
+      "region": "atlantic"
+    },
+    {
+      "id": "outer-banks",
+      "title": "Outer Banks, North Carolina",
+      "subtitle": "Oregon Inlet & Hatteras Bluewater",
+      "lat": 35.7636,
+      "lng": -75.528,
+      "species": [
+        "marlin",
+        "tuna",
+        "sailfish",
+        "mahi",
+        "wahoo"
+      ],
+      "type": [
+        "offshore"
+      ],
+      "difficulty": 3,
+      "best_months": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "teaser": "Oregon Inlet and Hatteras give Outer Banks crews fast shots at blue marlin, yellowfin tuna, sailfish, mahi, and wahoo when the Gulf Stream pushes tight to the beach.",
+      "thumbnail": "img/thumbs/outer-banks.webp",
+      "content_file": "content/outer-banks.html",
+      "region": "outer-banks-nc"
+    },
+    {
+      "id": "costa-rica",
+      "title": "Costa Rica",
+      "subtitle": "Sailfish Capital of the World",
+      "lat": 9.6175,
+      "lng": -84.635,
+      "species": [
+        "sailfish",
+        "marlin",
+        "roosterfish",
+        "tuna"
+      ],
+      "type": [
+        "offshore",
+        "inshore"
+      ],
+      "difficulty": 2,
+      "best_months": [
+        12,
+        1,
+        2,
+        3,
+        4
+      ],
+      "teaser": "Los Sue\u00f1os and Quepos deliver 20+ sailfish days in peak season. Inshore roosterfish and snapper year-round. Family-friendly infrastructure.",
+      "thumbnail": "img/thumbs/costa-rica.webp",
+      "content_file": "content/costa-rica.html",
+      "region": "central-america"
+    },
+    {
+      "id": "guatemala",
+      "title": "Guatemala",
+      "subtitle": "40+ Sailfish Releases Per Day",
+      "lat": 13.9338,
+      "lng": -90.7285,
+      "species": [
+        "sailfish",
+        "marlin"
+      ],
+      "type": [
+        "offshore"
+      ],
+      "difficulty": 3,
+      "best_months": [
+        11,
+        12,
+        1,
+        2,
+        3,
+        4
+      ],
+      "teaser": "Iztapa and Puerto Quetzal produce the highest sailfish-per-day averages on the planet. 40+ release days are not uncommon in peak season.",
+      "thumbnail": "img/thumbs/guatemala.webp",
+      "content_file": "content/guatemala.html",
+      "region": "central-america"
+    },
+    {
+      "id": "cabo-blanco",
+      "title": "Cabo Blanco, Peru",
+      "subtitle": "All-Tackle Black Marlin Record",
+      "lat": -4.25,
+      "lng": -81.2333,
+      "species": [
+        "marlin",
+        "tuna",
+        "wahoo"
+      ],
+      "type": [
+        "offshore"
+      ],
+      "difficulty": 5,
+      "best_months": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "teaser": "Home of the all-tackle black marlin world record. The Humboldt Current creates a nutrient-rich upwelling that draws massive pelagics close to shore.",
+      "thumbnail": "img/thumbs/cabo-blanco.webp",
+      "content_file": "content/cabo-blanco.html",
+      "region": "south-america"
+    },
+    {
+      "id": "cape-verde",
+      "title": "Cape Verde Islands",
+      "subtitle": "25+ Grander Blue Marlin",
+      "lat": 16.8842,
+      "lng": -24.9878,
+      "species": [
+        "marlin"
+      ],
+      "type": [
+        "offshore"
+      ],
+      "difficulty": 5,
+      "best_months": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "teaser": "25 blue marlin over 1,000 lbs caught here. Remote volcanic islands off West Africa with some of the purest blue marlin fishing anywhere.",
+      "thumbnail": "img/thumbs/cape-verde.webp",
+      "content_file": "content/cape-verde.html",
+      "region": "atlantic"
+    },
+    {
+      "id": "madeira",
+      "title": "Madeira, Portugal",
+      "subtitle": "Atlantic Blue Marlin Hotspot",
+      "lat": 32.6669,
+      "lng": -16.9241,
+      "species": [
+        "marlin",
+        "tuna"
+      ],
+      "type": [
+        "offshore"
+      ],
+      "difficulty": 4,
+      "best_months": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "teaser": "6 World Cup wins and 58 granders. Volcanic seamounts create upwelling that concentrates blue marlin within 3 miles of shore.",
+      "thumbnail": "img/thumbs/madeira.webp",
+      "content_file": "content/madeira.html",
+      "region": "atlantic"
+    },
+    {
+      "id": "cairns",
+      "title": "Cairns, Australia",
+      "subtitle": "Black Marlin Mecca",
+      "lat": -16.9186,
+      "lng": 145.7781,
+      "species": [
+        "marlin"
+      ],
+      "type": [
+        "offshore"
+      ],
+      "difficulty": 5,
+      "best_months": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "teaser": "894 black marlin over 1,000 lbs caught along the Great Barrier Reef. The September-December season draws serious anglers from around the world.",
+      "thumbnail": "img/thumbs/cairns.webp",
+      "content_file": "content/cairns.html",
+      "region": "pacific"
+    },
+    {
+      "id": "st-thomas",
+      "title": "St. Thomas, USVI",
+      "subtitle": "The North Drop",
+      "lat": 18.3358,
+      "lng": -64.9301,
+      "species": [
+        "marlin",
+        "tuna",
+        "mahi",
+        "wahoo"
+      ],
+      "type": [
+        "offshore"
+      ],
+      "difficulty": 3,
+      "best_months": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "teaser": "The North Drop \u2014 a dramatic ledge where the ocean floor falls from 600 to 6,000 feet. Blue marlin, yellowfin tuna, and wahoo stack up on the edge.",
+      "thumbnail": "img/thumbs/st-thomas.webp",
+      "content_file": "content/st-thomas.html",
+      "region": "caribbean"
+    },
+    {
+      "id": "venice-la",
+      "title": "Venice, Louisiana",
+      "subtitle": "Tuna Town USA",
+      "lat": 29.2747,
+      "lng": -89.3528,
+      "species": [
+        "tuna",
+        "marlin",
+        "mahi",
+        "wahoo"
+      ],
+      "type": [
+        "offshore"
+      ],
+      "difficulty": 3,
+      "best_months": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "teaser": "Where the Mississippi meets the Gulf. Oil rigs create structure that holds yellowfin tuna, and the deep blue is loaded with marlin and mahi.",
+      "thumbnail": "img/thumbs/venice-la.webp",
+      "content_file": "content/venice-la.html",
+      "region": "us-gulf"
+    },
+    {
+      "id": "isla-mujeres",
+      "title": "Isla Mujeres, Mexico",
+      "subtitle": "Sailfish Sardine Run",
+      "lat": 21.2321,
+      "lng": -86.7312,
+      "species": [
+        "sailfish",
+        "marlin",
+        "mahi"
+      ],
+      "type": [
+        "offshore"
+      ],
+      "difficulty": 2,
+      "best_months": [
+        1,
+        2,
+        3
+      ],
+      "teaser": "The winter sardine run pulls massive schools of sailfish within sight of the island. Packs of 50+ sailfish balling bait \u2014 a bucket-list spectacle.",
+      "thumbnail": "img/thumbs/isla-mujeres.webp",
+      "content_file": "content/isla-mujeres.html",
+      "region": "caribbean"
+    },
+    {
+      "id": "seychelles",
+      "title": "Seychelles",
+      "subtitle": "Indian Ocean Gamefish Paradise",
+      "lat": -4.6796,
+      "lng": 55.492,
+      "species": [
+        "marlin",
+        "sailfish",
+        "tuna",
+        "gt"
+      ],
+      "type": [
+        "offshore",
+        "fly"
+      ],
+      "difficulty": 5,
+      "best_months": [
+        3,
+        4,
+        10,
+        11
+      ],
+      "teaser": "Blue and black marlin, giant trevally on fly, dogtooth tuna on the reef. Some of the most pristine blue water left on the planet.",
+      "thumbnail": "img/thumbs/seychelles.webp",
+      "content_file": "content/seychelles.html",
+      "region": "indian-ocean"
+    },
+    {
+      "id": "nj-kayak",
+      "title": "New Jersey Shore",
+      "subtitle": "Monster Spring Stripers by Kayak",
+      "lat": 40.4568,
+      "lng": -74.224,
+      "species": [
+        "striped-bass"
+      ],
+      "type": [
+        "kayak",
+        "inshore"
+      ],
+      "difficulty": 3,
+      "best_months": [
+        4,
+        5,
+        6
+      ],
+      "teaser": "Raritan Bay to Cape May \u2014 New Jersey's striper run produces 40+ lb fish from a kayak. Clam bellies and bunker chunks from April through June.",
+      "thumbnail": "img/thumbs/nj-kayak.webp",
+      "content_file": "content/nj-kayak.html",
+      "region": "mid-atlantic-canyons"
+    },
+    {
+      "id": "florida-keys",
+      "title": "Florida Keys",
+      "subtitle": "Keys Sailfish, Tarpon & Flats Grand Slam",
+      "lat": 24.5551,
+      "lng": -81.78,
+      "species": [
+        "sailfish",
+        "marlin",
+        "tarpon",
+        "bonefish",
+        "mahi"
+      ],
+      "type": [
+        "offshore",
+        "flats",
+        "fly",
+        "inshore"
+      ],
+      "difficulty": 2,
+      "best_months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        11,
+        12
+      ],
+      "teaser": "Islamorada to Key West is pure Florida Keys fishing: winter sailfish on the reef edge, spring tarpon under the bridges, and year-round bonefish and permit on the flats.",
+      "thumbnail": "img/thumbs/florida-keys.webp",
+      "content_file": "content/florida-keys.html",
+      "region": "florida-keys"
+    },
+    {
+      "id": "dominican-republic",
+      "title": "Dominican Republic",
+      "subtitle": "Cap Cana Blue Marlin",
+      "lat": 18.4684,
+      "lng": -68.403,
+      "species": [
+        "marlin",
+        "sailfish",
+        "mahi"
+      ],
+      "type": [
+        "offshore"
+      ],
+      "difficulty": 3,
+      "best_months": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "teaser": "Cap Cana and Punta Cana sit on the edge of the Mona Passage \u2014 one of the most productive blue marlin corridors in the Caribbean.",
+      "thumbnail": "img/thumbs/dominican-republic.webp",
+      "content_file": "content/dominican-republic.html",
+      "region": "caribbean"
+    },
+    {
+      "id": "exmouth",
+      "title": "Exmouth, Western Australia",
+      "subtitle": "Ningaloo Blue Marlin",
+      "lat": -21.931,
+      "lng": 114.1247,
+      "species": [
+        "marlin",
+        "sailfish",
+        "tuna",
+        "gt"
+      ],
+      "type": [
+        "offshore"
+      ],
+      "difficulty": 5,
+      "best_months": [
+        1,
+        2,
+        3,
+        4,
+        11,
+        12
+      ],
+      "teaser": "First Australian blue marlin over 1,000 lbs caught here in 2018. Ningaloo Reef drops to 1,000m within a mile \u2014 deep water and big fish, right off the beach.",
+      "thumbnail": "img/thumbs/exmouth.webp",
+      "content_file": "content/exmouth.html",
+      "region": "pacific"
+    },
+    {
+      "id": "azores",
+      "title": "The Azores, Portugal",
+      "subtitle": "Condor Bank Giants",
+      "lat": 38.5328,
+      "lng": -28.631,
+      "species": [
+        "marlin",
+        "tuna"
+      ],
+      "type": [
+        "offshore"
+      ],
+      "difficulty": 4,
+      "best_months": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "teaser": "14 blue marlin over 1,000 lbs on Condor Bank. Mid-Atlantic volcanic seamounts create perfect conditions for monster blues and bigeye tuna.",
+      "thumbnail": "img/thumbs/azores.webp",
+      "content_file": "content/azores.html",
+      "region": "atlantic"
+    }
+  ],
+  "species_list": [
+    {
+      "id": "marlin",
+      "label": "Blue Marlin",
+      "description": "Big-game bluewater target with top destinations for blue and black marlin shots.",
+      "destination_count": 26
+    },
+    {
+      "id": "sailfish",
+      "label": "Sailfish",
+      "description": "Fast-action sailfish fisheries, from baitball chaos to high-release charter programs.",
+      "destination_count": 16
+    },
+    {
+      "id": "tuna",
+      "label": "Tuna",
+      "description": "Yellowfin-leaning tuna water with proven offshore runs and structure.",
+      "destination_count": 16
+    },
+    {
+      "id": "mahi",
+      "label": "Mahi-Mahi",
+      "description": "High-speed dolphin action around current lines, weed edges, and bluewater structure.",
+      "destination_count": 8
+    },
+    {
+      "id": "wahoo",
+      "label": "Wahoo",
+      "description": "High-speed wahoo destinations where temperature breaks and ledges matter.",
+      "destination_count": 11
+    },
+    {
+      "id": "bonefish",
+      "label": "Bonefish",
+      "description": "Flats-driven destinations for sight-fishing, wading, and technical presentations.",
+      "destination_count": 7
+    },
+    {
+      "id": "tarpon",
+      "label": "Tarpon",
+      "description": "Big migratory silver kings and warm-water inshore ambush lanes.",
+      "destination_count": 1
+    },
+    {
+      "id": "gt",
+      "label": "Giant Trevally",
+      "description": "Heavy-tackle giant trevally opportunities around reefs, drops, and oceanic islands.",
+      "destination_count": 3
+    },
+    {
+      "id": "roosterfish",
+      "label": "Roosterfish",
+      "description": "Pacific inshore bruisers with beach, rock, and panga credibility.",
+      "destination_count": 2
+    },
+    {
+      "id": "snapper",
+      "label": "Snapper",
+      "description": "Reef and structure-oriented snapper fisheries that overlap bluewater programs.",
+      "destination_count": 1
+    },
+    {
+      "id": "striped-bass",
+      "label": "Striped Bass",
+      "description": "Mid-Atlantic and Northeast migratory bass water.",
+      "destination_count": 2
+    },
+    {
+      "id": "bluefish",
+      "label": "Bluefish",
+      "description": "Aggressive nearshore surface-feeding action, mostly in US East overlap zones.",
+      "destination_count": 1
+    }
+  ],
+  "type_list": [
+    {
+      "id": "offshore",
+      "label": "Offshore / Bluewater"
+    },
+    {
+      "id": "flats",
+      "label": "Flats / Sight Fishing"
+    },
+    {
+      "id": "fly",
+      "label": "Fly Fishing"
+    },
+    {
+      "id": "inshore",
+      "label": "Inshore / Bay"
+    },
+    {
+      "id": "surf",
+      "label": "Surf / Beach"
+    },
+    {
+      "id": "kayak",
+      "label": "Kayak"
+    }
+  ],
+  "regions": [
+    {
+      "id": "bahamas",
+      "label": "Bahamas",
+      "description": "Bimini to Long Island \u2014 bluewater icons, skinny-water bonefish, and easy island-hopping charter access.",
+      "hero": "Start in the Bahamas for the cleanest mix of offshore destinations and flats targets in the app.",
+      "center": [
+        24.8143,
+        -77.1783
+      ],
+      "bounds": [
+        [
+          21.1,
+          -81.7667
+        ],
+        [
+          28.5285,
+          -72.59
+        ]
+      ],
+      "destination_count": 6,
+      "featured_species": [
+        "marlin",
+        "sailfish",
+        "bonefish",
+        "wahoo"
+      ]
+    },
+    {
+      "id": "caribbean",
+      "label": "Caribbean",
+      "description": "Island drops, sailfish baitballs, and big-water pelagics across the Caribbean basin.",
+      "hero": "Caribbean regions blend classic bluewater runs with quick-hit resort access.",
+      "center": [
+        19.7839,
+        -75.8306
+      ],
+      "bounds": [
+        [
+          16.3358,
+          -94.3616
+        ],
+        [
+          23.2321,
+          -57.2997
+        ]
+      ],
+      "destination_count": 3,
+      "featured_species": [
+        "marlin",
+        "mahi",
+        "sailfish",
+        "tuna"
+      ]
+    },
+    {
+      "id": "mid-atlantic-canyons",
+      "label": "Mid-Atlantic Canyons & Striper Coast",
+      "description": "White marlin, tuna, striped bass, and bluefish water from New Jersey through Ocean City \u2014 offshore canyon shots plus nearshore migration lanes.",
+      "hero": "This zone matches how East Coast anglers actually talk: canyon trolling when the weather lets you run, striped-bass and bluefish opportunities when you stay closer to the beach.",
+      "center": [
+        39.3966,
+        -74.6544
+      ],
+      "bounds": [
+        [
+          37.2,
+          -76.6
+        ],
+        [
+          41.6,
+          -72.8
+        ]
+      ],
+      "destination_count": 2,
+      "featured_species": [
+        "marlin",
+        "tuna",
+        "striped-bass",
+        "bluefish"
+      ]
+    },
+    {
+      "id": "outer-banks-nc",
+      "label": "Outer Banks, NC",
+      "description": "Oregon Inlet, Hatteras, and classic OBX bluewater with blue marlin, yellowfin tuna, sailfish, mahi, and wahoo in the mix.",
+      "hero": "This is the clean SEO version of the fishery Tim actually wants to surface: Outer Banks charter water, not a vague Carolina blob. Think Oregon Inlet runs, Hatteras edge bites, and billfish-heavy summer shots.",
+      "center": [
+        35.7636,
+        -75.528
+      ],
+      "bounds": [
+        [
+          34.9,
+          -76.7
+        ],
+        [
+          36.7,
+          -74.5
+        ]
+      ],
+      "destination_count": 1,
+      "featured_species": [
+        "marlin",
+        "tuna",
+        "sailfish",
+        "mahi",
+        "wahoo"
+      ]
+    },
+    {
+      "id": "carolina-gulf-stream",
+      "label": "Carolina Gulf Stream",
+      "description": "Bluewater marlin, sailfish, tuna, mahi, and wahoo along the Carolina offshore corridor where ledges, break lines, and Gulf Stream positioning drive the bite.",
+      "hero": "Yes, this overlaps the Outer Banks in real life. That is the point here: SEO and buyer intent. Treat this as the broader Carolina bluewater lane without pretending the map already has broad pin coverage up and down the coast.",
+      "center": [
+        33.9,
+        -77.2
+      ],
+      "bounds": [
+        [
+          32.2,
+          -79.8
+        ],
+        [
+          35.0,
+          -75.4
+        ]
+      ],
+      "destination_count": 0,
+      "featured_species": [
+        "marlin",
+        "sailfish",
+        "tuna",
+        "mahi",
+        "wahoo"
+      ]
+    },
+    {
+      "id": "south-florida-sailfish-coast",
+      "label": "South Florida Sailfish Coast",
+      "description": "Palm Beach, Fort Lauderdale, Miami, and Treasure Coast style Atlantic-side fishing built around winter sailfish, mahi, wahoo, and fast bluewater access.",
+      "hero": "This is the Florida Atlantic-side fishery anglers actually search for: sailfish alley, reef-edge kite fishing, and quick runs to blue water. Coverage is intentionally narrow for now rather than faking a bunch of pins.",
+      "center": [
+        26.75,
+        -80.0
+      ],
+      "bounds": [
+        [
+          26.0,
+          -80.8
+        ],
+        [
+          28.4,
+          -79.2
+        ]
+      ],
+      "destination_count": 0,
+      "featured_species": [
+        "sailfish",
+        "mahi",
+        "wahoo",
+        "tuna"
+      ]
+    },
+    {
+      "id": "florida-keys",
+      "label": "Florida Keys",
+      "description": "Islamorada to Key West with reef-edge sailfish, bridge tarpon, flats bonefish, permit, and classic mixed-bag Keys access.",
+      "hero": "Keep the Keys separate. It is its own fishery, its own search intent, and its own style of trip: reef edge outside, backcountry and flats inside, tarpon bridges when the migration lights up.",
+      "center": [
+        24.5551,
+        -81.78
+      ],
+      "bounds": [
+        [
+          24.2,
+          -82.5
+        ],
+        [
+          25.8,
+          -80.0
+        ]
+      ],
+      "destination_count": 1,
+      "featured_species": [
+        "sailfish",
+        "tarpon",
+        "bonefish",
+        "mahi"
+      ]
+    },
+    {
+      "id": "us-gulf",
+      "label": "US Gulf Coast",
+      "description": "Oil-rig structure, tuna-heavy offshore runs, and Gulf pelagic consistency.",
+      "hero": "The Gulf is a compact but lethal yellowfin-and-marlin region centered on proven structure.",
+      "center": [
+        29.2747,
+        -89.3528
+      ],
+      "bounds": [
+        [
+          27.2747,
+          -91.8528
+        ],
+        [
+          31.2747,
+          -86.8528
+        ]
+      ],
+      "destination_count": 1,
+      "featured_species": [
+        "tuna",
+        "marlin",
+        "mahi",
+        "wahoo"
+      ]
+    },
+    {
+      "id": "central-america",
+      "label": "Central America",
+      "description": "High-volume Pacific sailfish, roosterfish coastlines, and jungle-lodge marlin programs.",
+      "hero": "Central America is where release numbers get silly and inshore roosterfish stay in play.",
+      "center": [
+        10.7321,
+        -84.4627
+      ],
+      "bounds": [
+        [
+          5.2891,
+          -95.1145
+        ],
+        [
+          16.175,
+          -73.811
+        ]
+      ],
+      "destination_count": 3,
+      "featured_species": [
+        "marlin",
+        "sailfish",
+        "tuna",
+        "roosterfish"
+      ]
+    },
+    {
+      "id": "south-america",
+      "label": "South America",
+      "description": "Historic record-class marlin water and raw Pacific upwelling zones.",
+      "hero": "Small on pin count for now, but this region carries serious heavyweight history.",
+      "center": [
+        -4.25,
+        -81.2333
+      ],
+      "bounds": [
+        [
+          -6.25,
+          -83.7333
+        ],
+        [
+          -2.25,
+          -78.7333
+        ]
+      ],
+      "destination_count": 1,
+      "featured_species": [
+        "marlin",
+        "tuna",
+        "wahoo"
+      ]
+    },
+    {
+      "id": "atlantic",
+      "label": "Atlantic Islands",
+      "description": "Remote oceanic islands with volcanic relief, big blue marlin, and long-range Atlantic pedigree.",
+      "hero": "Atlantic islands are for anglers chasing classic big-fish water, not convenience.",
+      "center": [
+        27.7085,
+        -40.8373
+      ],
+      "bounds": [
+        [
+          9.3072,
+          -81.4897
+        ],
+        [
+          46.1098,
+          -0.1849
+        ]
+      ],
+      "destination_count": 4,
+      "featured_species": [
+        "marlin",
+        "tuna",
+        "wahoo"
+      ]
+    },
+    {
+      "id": "pacific",
+      "label": "Pacific",
+      "description": "Legendary marlin grounds stretching from Hawaii to French Polynesia to Australia.",
+      "hero": "The Pacific region is the blue-marlin fantasy draft.",
+      "center": [
+        -1.1455,
+        -5.111
+      ],
+      "bounds": [
+        [
+          -36.4808,
+          -261.6223
+        ],
+        [
+          34.1898,
+          251.4004
+        ]
+      ],
+      "destination_count": 4,
+      "featured_species": [
+        "marlin",
+        "tuna",
+        "wahoo",
+        "gt"
+      ]
+    },
+    {
+      "id": "indian-ocean",
+      "label": "Indian Ocean",
+      "description": "Remote current edges, GT-ready structure, and big-water pelagic variety.",
+      "hero": "Indian Ocean coverage starts with Seychelles \u2014 remote, technical, and worth the flight.",
+      "center": [
+        -4.6796,
+        55.492
+      ],
+      "bounds": [
+        [
+          -6.6796,
+          52.992
+        ],
+        [
+          -2.6796,
+          57.992
+        ]
+      ],
+      "destination_count": 1,
+      "featured_species": [
+        "marlin",
+        "sailfish",
+        "tuna",
+        "gt"
+      ]
+    }
+  ]
+}

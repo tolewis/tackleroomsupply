@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#0A1628"/>
+  <rect x="40" y="40" width="1120" height="550" rx="28" fill="url(#panel)" stroke="#D4AF37" stroke-opacity="0.22"/>
+  <circle cx="915" cy="178" r="118" fill="#2EC4B6" fill-opacity="0.08"/>
+  <circle cx="1020" cy="430" r="160" fill="#3A86C8" fill-opacity="0.12"/>
+  <text x="88" y="170" fill="#D4AF37" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">THE TACKLE ROOM</text>
+  <text x="88" y="265" fill="#E8EDF3" font-family="Inter, Arial, sans-serif" font-size="66" font-weight="800">Interactive Fishing</text>
+  <text x="88" y="335" fill="#E8EDF3" font-family="Inter, Arial, sans-serif" font-size="66" font-weight="800">Regions Map</text>
+  <text x="88" y="405" fill="#90A2B5" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="500">Browse by region first. Then jump to destination pins or fish targets.</text>
+
+  <g transform="translate(760 110)">
+    <rect x="0" y="0" width="320" height="112" rx="18" fill="#101F33" stroke="#1E3554"/>
+    <text x="24" y="34" fill="#8CA0B7" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600">Region quick-jump</text>
+    <g font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700">
+      <rect x="24" y="52" width="114" height="36" rx="18" fill="#162A42" stroke="#284466"/>
+      <text x="45" y="75" fill="#E8EDF3">Bahamas</text>
+      <rect x="150" y="52" width="146" height="36" rx="18" fill="#162A42" stroke="#284466"/>
+      <text x="170" y="75" fill="#E8EDF3">Central America</text>
+    </g>
+  </g>
+
+  <g transform="translate(760 266)">
+    <rect x="0" y="0" width="320" height="224" rx="22" fill="#101F33" stroke="#1E3554"/>
+    <text x="24" y="38" fill="#8CA0B7" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600">Mode</text>
+    <rect x="24" y="54" width="132" height="40" rx="20" fill="#D4AF37"/>
+    <text x="42" y="80" fill="#0A1628" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800">Destination pins</text>
+    <rect x="166" y="54" width="130" height="40" rx="20" fill="#162A42" stroke="#284466"/>
+    <text x="197" y="80" fill="#E8EDF3" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">Fish targets</text>
+
+    <g transform="translate(34 132)">
+      <path d="M42 0C18.8 0 0 18.8 0 42c0 31.5 42 70 42 70s42-38.5 42-70C84 18.8 65.2 0 42 0Z" fill="#D4AF37"/>
+      <circle cx="42" cy="38" r="16" fill="#0A1628"/>
+    </g>
+    <g transform="translate(176 158)">
+      <path d="M108 22c-10.5 7.2-18.4 16.6-23 27.8-17.4 0-31.8-2.9-45.2-11-8.7 9.1-22.1 14.9-41.6 14.9-11.1 0-21.2-1.9-30.2-5.8 7.4-7.2 12.1-15.8 14.7-26-2.6-10.1-7.3-18.8-14.7-26C-23 2-12.9 0  -1.8 0c19.5 0 32.9 5.8 41.6 14.9C53.2 6.8 67.6 4 85 4c4.6 11.2 12.5 20.6 23 18Z" fill="#2EC4B6" stroke="#BFF6F1" stroke-width="4"/>
+      <circle cx="20" cy="13" r="5" fill="#0A1628"/>
+    </g>
+  </g>
+
+  <defs>
+    <linearGradient id="panel" x1="600" y1="40" x2="600" y2="590" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F1A2B"/>
+      <stop offset="1" stop-color="#0B1524"/>
+    </linearGradient>
+  </defs>
+</svg>

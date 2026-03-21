@@ -71,7 +71,6 @@ export default function TermsOfServicePage() {
               The app offers a free tier and a Pro subscription:
             </Text>
             <ul className="mt-3 list-disc list-inside space-y-1 text-text-secondary">
-              <li>Pro Monthly: $9.99/month</li>
               <li>Pro Annual: $79.99/year (includes a 7-day free trial)</li>
             </ul>
             <Text variant="secondary" className="mt-3">

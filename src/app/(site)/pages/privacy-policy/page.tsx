@@ -7,7 +7,7 @@ import { Text } from "@/components/primitives/Text";
 export const metadata: Metadata = {
   title: "Privacy Policy — Saltwater Tides & Forecast",
   description:
-    "Privacy policy for the Saltwater Tides & Forecast iOS app by The Tackle Room.",
+    "Privacy policy for the Saltwater Tides & Forecast iOS app by Unhook, LLC.",
 };
 
 export default function PrivacyPolicyPage() {

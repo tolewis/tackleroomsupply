@@ -7,7 +7,7 @@ import { Text } from "@/components/primitives/Text";
 export const metadata: Metadata = {
   title: "Terms of Service — Saltwater Tides & Forecast",
   description:
-    "Terms of service for the Saltwater Tides & Forecast iOS app by The Tackle Room.",
+    "Terms of service for the Saltwater Tides & Forecast iOS app by Unhook, LLC.",
 };
 
 export default function TermsOfServicePage() {
@@ -118,7 +118,7 @@ export default function TermsOfServicePage() {
               Limitation of liability
             </Heading>
             <Text variant="secondary">
-              The Tackle Room is not liable for any decisions made based on data
+              Unhook, LLC is not liable for any decisions made based on data
               displayed in this app, including but not limited to fishing trip
               planning, marine navigation, or safety decisions. Use the app at
               your own risk.

@@ -19,6 +19,7 @@ const SECTIONS = [
   { id: "black-drum", label: "Black Drum" },
   { id: "calendar", label: "Calendar" },
   { id: "tackle", label: "Tackle" },
+  { id: "gear", label: "Gear" },
   { id: "trip", label: "Plan Your Trip" },
   { id: "regs", label: "Regulations" },
 ];
@@ -43,6 +44,29 @@ function SectionImage({ src, alt }: { src: string; alt: string }) {
     <div className="relative h-[240px] sm:h-[300px] rounded-xl overflow-hidden mb-8">
       <img src={src} alt={alt} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
     </div>
+  );
+}
+
+function ProductCard({ name, handle, desc }: { name: string; handle: string; desc: string }) {
+  return (
+    <a href={`https://thetackleroom.com/products/${handle}`} target="_blank" rel="noopener noreferrer" className="group block p-4 rounded-xl border border-border bg-surface-raised/50 hover:border-accent/60 hover:bg-accent/5 transition-colors">
+      <Text className="font-heading font-semibold text-sm group-hover:text-accent transition-colors">{name}</Text>
+      <Text variant="muted" size="xs" className="mt-1">{desc}</Text>
+    </a>
+  );
+}
+
+function CollectionCard({ name, handle, desc }: { name: string; handle: string; desc: string }) {
+  return (
+    <a href={`https://thetackleroom.com/collections/${handle}`} target="_blank" rel="noopener noreferrer" className="block p-5 rounded-xl border-2 border-accent/30 bg-accent/5 hover:border-accent/60 hover:bg-accent/10 transition-colors">
+      <div className="flex items-center justify-between">
+        <div>
+          <Text className="font-heading font-semibold">{name}</Text>
+          <Text variant="muted" size="sm" className="mt-1">{desc}</Text>
+        </div>
+        <Text className="font-heading font-semibold text-accent text-sm whitespace-nowrap ml-4">Browse &rarr;</Text>
+      </div>
+    </a>
   );
 }
 
@@ -199,7 +223,7 @@ export default function LouisianaPage() {
                   The winter pattern is where trophy hunters focus. Gulf Coast winter pushes big trout, 8 lbs and up, into 6 inches of water where mullet seek shallow muddy warmth on sunny afternoons. These fish are sluggish but feed aggressively in short windows. Big trout also ride out cold snaps in channels and deep basins during late winter, stacking up in predictable locations that local anglers guard like state secrets.
                 </Text>
                 <Text variant="secondary" className="leading-relaxed">
-                  Best time on the water varies by season. Spring and summer, get there right before sunrise and fish the first two hours hard. Winter, the bite often fires at night in clear water over shell bottoms. Glow-colored soft plastics under a rattle cork produce well after dark. If you have never fished for speckled trout at night in Louisiana, you are missing one of the most underrated bites in inshore fishing.
+                  Best time on the water varies by season. Spring and summer, get there right before sunrise and fish the first two hours hard. Winter, the bite often fires at night in clear water over shell bottoms. Glow-colored soft plastics under a rattle cork produce well after dark. If you have never fished for speckled trout at night in Louisiana, you are missing one of the most underrated bites in inshore fishing. Read our <a href="https://thetackleroom.com/blogs/news/night-fishing-in-saltwater" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">night fishing guide</a> for more on after-dark tactics.
                 </Text>
               </div>
             </div>
@@ -221,7 +245,7 @@ export default function LouisianaPage() {
                   Black drum are nocturnal feeders. The peak bite runs from about 5 PM through sunset. They use their barbels and inferior mouth to root through mud and shell for crustaceans. Fresh clams, mussels, sand fleas, and half or quarter blue crab are the top baits. Artificials work, but natural bait outperforms everything else for drum by a wide margin.
                 </Text>
                 <Text variant="secondary" className="leading-relaxed">
-                  You will find black drum on spring ledge walls alongside flounder, working the same depth transitions that hold speckled trout during the day. The key to hooking them is patience. When you feel the first tap, do nothing. Wait 5-7 counts for a steady pull, then engage the circle hook by reeling tight and lifting the rod. Setting the hook early on a black drum means pulling the bait out of its mouth before it commits.
+                  You will find black drum on spring ledge walls alongside flounder, working the same depth transitions that hold speckled trout during the day. The key to hooking them is patience. When you feel the first tap, do nothing. Wait 5-7 counts for a steady pull, then engage the circle hook by reeling tight and lifting the rod. Setting the hook early on a black drum means pulling the bait out of its mouth before it commits. See our breakdown of <a href="https://thetackleroom.com/blogs/news/circle-hooks-vs-j-hooks-choosing-the-right-hook-for-fishing" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">circle hooks vs J hooks</a> for why circles are the right choice here.
                 </Text>
               </div>
             </div>
@@ -302,8 +326,31 @@ export default function LouisianaPage() {
         </Container>
       </Section>
 
+      {/* Recommended Gear */}
+      <Section className="bg-surface-raised" id="gear">
+        <Container>
+          <div className="max-w-3xl space-y-10">
+            <div>
+              <Heading as="h2" size="4xl" className="mb-4">Recommended Gear</Heading>
+              <Text variant="secondary" className="mb-6 leading-relaxed">
+                Proven terminal tackle and hardware for Louisiana marsh and offshore. These are the products our anglers run and reorder.
+              </Text>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+                <ProductCard name="Eagle Claw Circle Hooks" handle="eagle-claw-l2004el-circle-hooks" desc="The marsh standard for slot reds and drum" />
+                <ProductCard name="Mustad Demon Circle Hooks" handle="mustad-circle-hooks-demon-ultrapoint" desc="Ultra-sharp inline circles for bull reds" />
+                <ProductCard name="Fluorocarbon Leader Material" handle="diamond-illusion-fluorocarbon-leader-material" desc="20-40 lb leader for clear marsh water" />
+                <ProductCard name="Gotcha Plug" handle="gotcha-plug" desc="Versatile marsh lure for specks and reds" />
+                <ProductCard name="Pyramid Sinkers" handle="pyramid-sinkers" desc="Hold bottom in passes during bull red season" />
+                <ProductCard name="Ball Bearing Snap Swivels" handle="ball-bearing-snap-swivels-epic-fishing-co" desc="Quick-change rigging for Venice offshore" />
+              </div>
+              <CollectionCard name="Shop Circle Hooks" handle="circle-hooks" desc="Required in Gulf federal waters, recommended everywhere" />
+            </div>
+          </div>
+        </Container>
+      </Section>
+
       {/* Plan Your Trip */}
-      <Section className="bg-surface-raised" id="trip">
+      <Section id="trip">
         <Container>
           <div className="max-w-3xl space-y-10">
             <div>
@@ -407,7 +454,7 @@ export default function LouisianaPage() {
                 <Heading as="h4" size="md" className="mb-1">Gear up for Louisiana</Heading>
                 <Text variant="secondary" size="sm">Gold spoons, paddletails, popping corks, heavy leaders. Everything you need for the marsh.</Text>
               </div>
-              <a href="https://thetackleroom.com" target="_blank" rel="noopener noreferrer" className="rounded-lg bg-accent px-6 py-2.5 font-heading font-semibold text-sm text-stone-950 hover:bg-accent-hover transition-colors whitespace-nowrap">
+              <a href="https://thetackleroom.com/collections/circle-hooks" target="_blank" rel="noopener noreferrer" className="rounded-lg bg-accent px-6 py-2.5 font-heading font-semibold text-sm text-stone-950 hover:bg-accent-hover transition-colors whitespace-nowrap">
                 Shop Tackle &rarr;
               </a>
             </div>

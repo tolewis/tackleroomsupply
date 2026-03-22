@@ -19,6 +19,7 @@ const SECTIONS = [
   { id: "pier", label: "Pier Fishing" },
   { id: "calendar", label: "Calendar" },
   { id: "tackle", label: "Tackle" },
+  { id: "gear", label: "Gear" },
   { id: "trip", label: "Plan Your Trip" },
   { id: "regs", label: "Regulations" },
 ];
@@ -43,6 +44,29 @@ function SectionImage({ src, alt }: { src: string; alt: string }) {
     <div className="relative h-[240px] sm:h-[300px] rounded-xl overflow-hidden mb-8">
       <img src={src} alt={alt} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
     </div>
+  );
+}
+
+function ProductCard({ name, handle, desc }: { name: string; handle: string; desc: string }) {
+  return (
+    <a href={`https://thetackleroom.com/products/${handle}`} target="_blank" rel="noopener noreferrer" className="group block p-4 rounded-xl border border-border bg-surface-raised/50 hover:border-accent/60 hover:bg-accent/5 transition-colors">
+      <Text className="font-heading font-semibold text-sm group-hover:text-accent transition-colors">{name}</Text>
+      <Text variant="muted" size="xs" className="mt-1">{desc}</Text>
+    </a>
+  );
+}
+
+function CollectionCard({ name, handle, desc }: { name: string; handle: string; desc: string }) {
+  return (
+    <a href={`https://thetackleroom.com/collections/${handle}`} target="_blank" rel="noopener noreferrer" className="block p-5 rounded-xl border-2 border-accent/30 bg-accent/5 hover:border-accent/60 hover:bg-accent/10 transition-colors">
+      <div className="flex items-center justify-between">
+        <div>
+          <Text className="font-heading font-semibold">{name}</Text>
+          <Text variant="muted" size="sm" className="mt-1">{desc}</Text>
+        </div>
+        <Text className="font-heading font-semibold text-accent text-sm whitespace-nowrap ml-4">Browse &rarr;</Text>
+      </div>
+    </a>
   );
 }
 
@@ -122,7 +146,7 @@ export default function NorthCarolinaPage() {
                 The numbers are staggering. Schools of up to 2,000 fish have been documented over Diamond Shoals. Fish at the Chesapeake Bay mouth and Virginia Eastern Shore routinely measure 44-53 inches. Fishing improves during high winds and rough conditions - target the breaking waves on shallow shoals behind the islands. These fish feed in the chaos.
               </Text>
               <Text variant="secondary" className="leading-relaxed">
-                The run starts in September and peaks in October, with bull reds pushing south along the beaches. Late November can still produce, especially on warm-water days. For surf bulls, rig with medium-heavy spinning, 30-40 pound braid, and 40-60 pound leader. The standard rig is a fish-finder setup with 8-10 ounce lead, 9/0 circle hook, and 1-3 feet of 50-pound mono leader. Whole or half hard crabs on a 9/0 hook with 50-pound leader are devastating. Cut mullet works, but crab is king when the big schools are in.
+                The run starts in September and peaks in October, with bull reds pushing south along the beaches. Late November can still produce, especially on warm-water days. For more on the seasonal patterns, see our guide to <a href="https://thetackleroom.com/blogs/news/fall-fishing-on-the-east-coast" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">fall fishing on the East Coast</a>. For surf bulls, rig with medium-heavy spinning, 30-40 pound braid, and 40-60 pound leader. The standard rig is a fish-finder setup with 8-10 ounce lead, 9/0 circle hook, and 1-3 feet of 50-pound mono leader. Whole or half hard crabs on a 9/0 hook with 50-pound leader are devastating. Cut mullet works, but crab is king when the big schools are in.
               </Text>
               <Text variant="secondary" className="leading-relaxed">
                 Watch the water. Mud balls on the surface mean bull reds are attacking bait on the bottom. Fish that push significantly more water than mullet are your targets. And when dolphins start feeding - menhaden are present, and large redfish are not far behind.
@@ -147,7 +171,7 @@ export default function NorthCarolinaPage() {
                 Winter bluefin fishing has exploded. North Carolina has a unique January fishery - boats run out of Oregon Inlet for giant bluefin in January and February. The IGFA all-tackle record stands at nearly 1,500 pounds (Nova Scotia), but NC waters consistently produce school bluefin (27-47 inches), large school (47-59 inches), and medium-class fish (59-73 inches). A 60-inch fish typically weighs 130-140 pounds. They are warm-blooded and feed comfortably in cold water where other tunas are absent. The best bite comes during incoming-to-slack high tide, in the couple hours after sunrise and sunset. Full moon days produce peaks.
               </Text>
               <Text variant="secondary" className="leading-relaxed">
-                Summer and fall bring yellowfin tuna, wahoo, and mahi on the Gulf Stream edge. King mackerel run thick from May through October. Larger mahi arrive off North Carolina in April and May. Billfish tournaments run through the summer. The offshore season here is not a two-month window - it is a rotating calendar from January through December.
+                Summer and fall bring yellowfin tuna, wahoo, and mahi on the Gulf Stream edge. King mackerel run thick from May through October - read our <a href="https://thetackleroom.com/blogs/news/king-mackerel-fishing-guide-how-to-catch-kings-from-the-beach-to-the-ledge" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">king mackerel guide</a> for rigging and tactics. Larger mahi arrive off North Carolina in April and May. Billfish tournaments run through the summer. The offshore season here is not a two-month window - it is a rotating calendar from January through December.
               </Text>
               <Text variant="secondary" className="leading-relaxed">
                 A standard NC trolling spread runs 5-7 lines. Long riggers carry skirted ballyhoo or large Ilander lures for billfish and wahoo. Short riggers run smaller skirted ballyhoo for mahi and yellowfin. Flat lines pull diving plugs like the Rapala CD 18 or Halco Laser Pro 190 just under the surface wash. A shotgun line far back off the center rigger with a cedar plug or naked ballyhoo picks up wahoo that shy away from the spread. For yellowfin specifically, chunking butterfish or cut sardines creates a chum slick that holds schools behind the boat once you locate them on the temperature break. Slow-trolling live mackerel on 1.5-ounce jigheads with 8-inch soft plastic split-tails produces big yellowfin when the fish are feeding deep along the edge.
@@ -205,7 +229,7 @@ export default function NorthCarolinaPage() {
                 King mackerel are most abundant on the Crystal Coast in September and October, with fish commonly found in 45-85 feet of water. Slow-trolling live blue runners produces the biggest fish. Standard pier king rig: drag set under 5 pounds to prevent pulling hooks from their soft mouths. Double-pogy rig gives a larger profile that attracts attention.
               </Text>
               <Text variant="secondary" className="leading-relaxed">
-                Cobia sight-fishing from piers is underrated. After 7:30 AM when the sun gets high enough to see into the water, watch for dark shapes cruising near menhaden schools. They follow leatherback turtles and manta rays along the beach. Classic bucktail jig in pink or orange is the standard presentation - quick retrieve past the fish, dead stop to let the jig fall, which triggers hesitant bites. North Carolina sits at the southern edge of cobia&apos;s expanding range, with fish now reaching New York.
+                Cobia sight-fishing from piers is underrated. After 7:30 AM when the sun gets high enough to see into the water, watch for dark shapes cruising near menhaden schools. They follow leatherback turtles and manta rays along the beach. Classic bucktail jig in pink or orange is the standard presentation - quick retrieve past the fish, dead stop to let the jig fall, which triggers hesitant bites. Read our <a href="https://thetackleroom.com/blogs/news/cobia-fishing-guide-how-to-sight-cast-chum-and-jig-for-ling" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">cobia fishing guide</a> for the full breakdown. North Carolina sits at the southern edge of cobia&apos;s expanding range, with fish now reaching New York.
               </Text>
             </div>
           </div>
@@ -269,6 +293,27 @@ export default function NorthCarolinaPage() {
                 </Text>
               </div>
             </div>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Recommended Gear */}
+      <Section className="bg-surface-raised" id="gear">
+        <Container>
+          <div className="max-w-3xl">
+            <Heading as="h2" size="4xl" className="mb-4">Recommended Gear</Heading>
+            <Text variant="secondary" className="mb-6 leading-relaxed">
+              Proven tackle for OBX and the North Carolina coast. These are the products NC anglers actually use.
+            </Text>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+              <ProductCard name="E-Shield Piano Wire" handle="piano-wire" desc="Essential for king mackerel and wahoo leaders" />
+              <ProductCard name="Spro Prime Bucktail Jig" handle="spro-prime-bucktail-jig" desc="OBX pier standard for cobia and flounder" />
+              <ProductCard name="Gotcha Plug" handle="gotcha-plug" desc="Spanish mackerel and bluefish on every pier" />
+              <ProductCard name="Pyramid Sinkers" handle="pyramid-sinkers" desc="Hold bottom in OBX surf for bull drum" />
+              <ProductCard name="Fluorocarbon Leader Material" handle="diamond-illusion-fluorocarbon-leader-material" desc="Invisible leader for speckled trout and reds" />
+              <ProductCard name="Ballyhoo Pin Rig" handle="ballyhoo-rig-wire-mono-or-fluoro" desc="Pre-rigged trolling bait for offshore pelagics" />
+            </div>
+            <CollectionCard name="Shop Jigs" handle="jigs" desc="Bucktails, diamond jigs, and inshore jig heads" />
           </div>
         </Container>
       </Section>
@@ -373,7 +418,7 @@ export default function NorthCarolinaPage() {
                 <Heading as="h4" size="md" className="mb-1">Gear up for North Carolina</Heading>
                 <Text variant="secondary" size="sm">Find the exact tackle for every NC fishery at The TackleRoom.</Text>
               </div>
-              <a href="https://thetackleroom.com" target="_blank" rel="noopener noreferrer" className="rounded-lg bg-accent px-6 py-2.5 font-heading font-semibold text-sm text-stone-950 hover:bg-accent-hover transition-colors whitespace-nowrap">
+              <a href="https://thetackleroom.com/collections/jigs" target="_blank" rel="noopener noreferrer" className="rounded-lg bg-accent px-6 py-2.5 font-heading font-semibold text-sm text-stone-950 hover:bg-accent-hover transition-colors whitespace-nowrap">
                 Shop Tackle &rarr;
               </a>
             </div>

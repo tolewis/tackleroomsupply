@@ -22,6 +22,7 @@ const SECTIONS = [
   { id: "backcountry", label: "Backcountry" },
   { id: "calendar", label: "Calendar" },
   { id: "tackle", label: "Tackle" },
+  { id: "gear", label: "Gear" },
   { id: "trip", label: "Plan Your Trip" },
   { id: "regs", label: "Regulations" },
 ];
@@ -46,6 +47,29 @@ function SectionImage({ src, alt }: { src: string; alt: string }) {
     <div className="relative h-[240px] sm:h-[300px] rounded-xl overflow-hidden mb-8">
       <img src={src} alt={alt} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
     </div>
+  );
+}
+
+function ProductCard({ name, handle, desc }: { name: string; handle: string; desc: string }) {
+  return (
+    <a href={`https://thetackleroom.com/products/${handle}`} target="_blank" rel="noopener noreferrer" className="group block p-4 rounded-xl border border-border bg-surface-raised/50 hover:border-accent/60 hover:bg-accent/5 transition-colors">
+      <Text className="font-heading font-semibold text-sm group-hover:text-accent transition-colors">{name}</Text>
+      <Text variant="muted" size="xs" className="mt-1">{desc}</Text>
+    </a>
+  );
+}
+
+function CollectionCard({ name, handle, desc }: { name: string; handle: string; desc: string }) {
+  return (
+    <a href={`https://thetackleroom.com/collections/${handle}`} target="_blank" rel="noopener noreferrer" className="block p-5 rounded-xl border-2 border-accent/30 bg-accent/5 hover:border-accent/60 hover:bg-accent/10 transition-colors">
+      <div className="flex items-center justify-between">
+        <div>
+          <Text className="font-heading font-semibold">{name}</Text>
+          <Text variant="muted" size="sm" className="mt-1">{desc}</Text>
+        </div>
+        <Text className="font-heading font-semibold text-accent text-sm whitespace-nowrap ml-4">Browse &rarr;</Text>
+      </div>
+    </a>
   );
 }
 
@@ -114,7 +138,8 @@ export default function FloridaKeysPage() {
           <div className="max-w-3xl space-y-6 mt-10">
             <Text variant="secondary" size="lg" className="leading-relaxed">
               From Key Largo to Key West, the Florida Keys offer the most diverse saltwater fishing on Earth. That is not marketing copy. Within a single day&apos;s run you can sight-cast to tailing{" "}
-              <NextLink href="/food" className="text-accent hover:underline">bonefish</NextLink> on ankle-deep turtle grass, drift live crabs to 150-pound tarpon rolling in a channel, drop a swordfish bait 1,000 feet into the abyss, and troll ballyhoo along a weed line stacked with mahi. No other fishery in the Western Hemisphere puts that range within reach of one dock.
+              <NextLink href="/food" className="text-accent hover:underline">bonefish</NextLink> on ankle-deep turtle grass, drift live crabs to 150-pound tarpon rolling in a channel, drop a swordfish bait 1,000 feet into the abyss, and troll ballyhoo along a weed line stacked with mahi. Trolling for{" "}
+              <a href="https://thetackleroom.com/blogs/news/king-mackerel-fishing-guide-how-to-catch-kings-from-the-beach-to-the-ledge" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">king mackerel</a> on the reef is another Keys staple that produces year-round. No other fishery in the Western Hemisphere puts that range within reach of one dock.
             </Text>
             <Text variant="secondary" className="leading-relaxed">
               The Keys sit on the edge of the Gulf Stream. The warm current pushes north along the reef line, carrying pelagic species within 15 miles of shore. Behind the islands, Florida Bay and the Everglades backcountry create a labyrinth of mangrove creeks, shallow ponds, and grass flats that hold snook, juvenile tarpon, and redfish year-round. The bridges connecting the island chain are fish magnets after dark - tarpon, snook, and snapper stack in the shadow lines where light meets darkness. And the reef system running parallel to the Keys from Key Largo to the Dry Tortugas holds yellowtail snapper, mutton snapper, grouper, and everything else that eats on structure.
@@ -314,7 +339,8 @@ export default function FloridaKeysPage() {
                   Mahi congregate around any floating structure - lobster pots, high-flyers, weather buoys, sargassum mats, even dead sea turtles. Approach with engines off and drift toward the structure. Keep hooked fish in the water to attract more bites from the school. When the school goes deep, switch to a 350-grain sink tip. Trolling rigs: ballyhoo with chugger heads, cedar plugs far back from center rigger, Rapala CD 18 or Halco Laser Pro 190 on flat lines.
                 </Text>
                 <Text variant="secondary" className="leading-relaxed">
-                  Winter sailfish run from November through March, with the heaviest action off Islamorada. Swordfishing at night on the deep drop has become the hottest bite in the Keys - dropping baits 1,000 feet or more into the abyss for fish that can top 200 pounds. This is expedition-level fishing, but it happens 30 minutes from the dock.
+                  Winter sailfish run from November through March, with the heaviest action off Islamorada. Swordfishing at night on the deep drop has become the hottest bite in the Keys - dropping baits 1,000 feet or more into the abyss for fish that can top 200 pounds. Read our{" "}
+                  <a href="https://thetackleroom.com/blogs/news/swordfish-fishing-guide-how-to-deep-drop-night-fish-and-rig-for-broadbills" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">swordfish guide</a> for rigging details and techniques. This is expedition-level fishing, but it happens 30 minutes from the dock.
                 </Text>
                 <Text variant="secondary" className="leading-relaxed">
                   Blackfin tuna run on and off at the Hump depending on current direction. Pilchards and chum produce larger fish when they are biting. King mackerel and mutton snapper hold on the reef year-round. The Keys offshore fishery is not seasonal - it is a year-round rotation of species as water temperatures and currents shift.
@@ -421,8 +447,31 @@ export default function FloridaKeysPage() {
         </Container>
       </Section>
 
+      {/* Recommended Gear */}
+      <Section id="gear">
+        <Container>
+          <div className="max-w-3xl space-y-10">
+            <div>
+              <Heading as="h2" size="4xl" className="mb-4">Recommended Gear</Heading>
+              <Text variant="secondary" className="mb-6 leading-relaxed">
+                Proven terminal tackle and lures for Keys species. Every product here is something guides actually tie on.
+              </Text>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                <ProductCard name="E-Shield Piano Wire" handle="piano-wire" desc="Premium stainless leader wire for Keys species" />
+                <ProductCard name="Ballyhoo Pin Rig" handle="ballyhoo-rig-wire-mono-or-fluoro" desc="Pre-rigged ballyhoo for trolling mahi and sailfish" />
+                <ProductCard name="Eagle Claw Circle Hooks" handle="eagle-claw-l2004el-circle-hooks" desc="Mandatory for Florida tarpon fishing" />
+                <ProductCard name="Gotcha Plug" handle="gotcha-plug" desc="Classic Keys pier and reef lure" />
+                <ProductCard name="Fluorocarbon Leader Material" handle="diamond-illusion-fluorocarbon-leader-material" desc="Invisible leader for permit and bonefish" />
+                <ProductCard name="Spro Prime Bucktail Jig" handle="spro-prime-bucktail-jig" desc="Proven on yellowtail snapper and cobia" />
+              </div>
+              <CollectionCard name="Shop Circle Hooks" handle="circle-hooks" desc="Required for tarpon, recommended for all Keys species" />
+            </div>
+          </div>
+        </Container>
+      </Section>
+
       {/* Plan Your Trip */}
-      <Section id="trip">
+      <Section className="bg-surface-raised" id="trip">
         <Container>
           <div className="max-w-3xl space-y-10">
             <div>
@@ -465,7 +514,7 @@ export default function FloridaKeysPage() {
       </Section>
 
       {/* Conservation */}
-      <Section className="bg-surface-raised" id="regs">
+      <Section id="regs">
         <Container>
           <div className="max-w-3xl space-y-10">
             <div>
@@ -496,7 +545,7 @@ export default function FloridaKeysPage() {
       </Section>
 
       {/* More destinations */}
-      <Section>
+      <Section className="bg-surface-raised">
         <Container>
           <div className="max-w-3xl">
             <Heading as="h2" size="4xl" className="mb-6">More Destinations</Heading>
@@ -529,7 +578,7 @@ export default function FloridaKeysPage() {
                 <Heading as="h4" size="md" className="mb-1">Gear up for the Keys</Heading>
                 <Text variant="secondary" size="sm">Find the exact tackle for every Keys fishery at The TackleRoom.</Text>
               </div>
-              <a href="https://thetackleroom.com" target="_blank" rel="noopener noreferrer" className="rounded-lg bg-accent px-6 py-2.5 font-heading font-semibold text-sm text-stone-950 hover:bg-accent-hover transition-colors whitespace-nowrap">
+              <a href="https://thetackleroom.com/collections/circle-hooks" target="_blank" rel="noopener noreferrer" className="rounded-lg bg-accent px-6 py-2.5 font-heading font-semibold text-sm text-stone-950 hover:bg-accent-hover transition-colors whitespace-nowrap">
                 Shop Tackle &rarr;
               </a>
             </div>

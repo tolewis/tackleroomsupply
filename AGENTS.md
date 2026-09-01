@@ -27,6 +27,14 @@ Default branch: `main`.
 - Documentation is part of the work. Update docs when behavior changes.
 - One active owner per branch/lane. Do not touch another agent's PR, branch, or issue unilaterally.
 
+## Testing
+
+- **Test-Bench is the testing solution** for this fleet: `git@github.com:tolewis/Test-Bench.git`. It proves what a running system does, across repos, with evidence under `.test-bench/runs/`.
+- **This repo owns its own tests.** Unit, route, and component tests live here and run in this repo's CI on every push. Follow the TDD loop in `bibles/60-engineering-principles.md`. Do not wrap this repo's test command in a Test-Bench manifest.
+- **Read `docs/WHAT-BELONGS-HERE.md` in Test-Bench** before you write a manifest or a gate script. It has the four-question decision test.
+- **One manifest per repo:** `test-bench.yaml` at the root, from `templates/repo/` in Test-Bench. No one-off manifests.
+- **If you had to build a test tool that Test-Bench did not have, file an issue** in Test-Bench with the `test-tooling-gap` template before you close the task. A test the repo should own is not a gap. Write it here.
+
 ## Product / organism rule
 
 If this repo is a living product (not a skill dump, agent workspace, or archive):

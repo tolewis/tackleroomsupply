@@ -1,0 +1,70 @@
+name: Test tooling gap
+description: You had to build a test tool, probe, or gate that Test-Bench did not have. File this in tolewis/Test-Bench.
+title: "[test-tooling-gap] "
+labels: ["test-tooling-gap", "needs-agent-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Test-Bench (`git@github.com:tolewis/Test-Bench.git`) is the testing solution for this fleet.
+        Read `docs/WHAT-BELONGS-HERE.md` in that repo before you file.
+        Do **not** file when the thing you built is a unit, route, or component test. That test belongs in the application repo.
+        File when you built a tool that proves behavior of a running system, and no addon covered it.
+  - type: input
+    id: target
+    attributes:
+      label: Target repo and surface
+      placeholder: tolewis/contractor-AI, apps/api Fastify route table
+    validations:
+      required: true
+  - type: textarea
+    id: needed
+    attributes:
+      label: What you needed to prove
+      description: One or two sentences. The behavior, not the tool.
+    validations:
+      required: true
+  - type: textarea
+    id: built
+    attributes:
+      label: What you built
+      description: Path to the script, probe, or gate. One line on how it works. Link the commit.
+    validations:
+      required: true
+  - type: input
+    id: closest
+    attributes:
+      label: Closest existing addon and why it did not fit
+      placeholder: completeness. It reports static calls, but I needed an in-memory route probe.
+    validations:
+      required: true
+  - type: dropdown
+    id: home
+    attributes:
+      label: Where should this live
+      options:
+        - New verb on an existing addon
+        - New addon (needs runbook + evidence adapter)
+        - The application repo (I will move it and close this)
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Run id, log path, or output that shows the tool worked against a real target.
+    validations:
+      required: true
+  - type: checkboxes
+    id: gates
+    attributes:
+      label: Gates
+      options:
+        - label: I read docs/WHAT-BELONGS-HERE.md and docs/runbooks/README.md in Test-Bench
+          required: true
+        - label: This is not a wrapper around the application's own test, typecheck, or lint command
+          required: true
+        - label: The tool serves more than one repo, or I chose "The application repo" above
+          required: true
+        - label: I searched Test-Bench issues for this gap and found no open issue
+          required: true

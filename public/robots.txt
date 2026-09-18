@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Keep transactional / app noise out of crawl if added later
+Disallow: /api/
+Disallow: /_next/
+
+Sitemap: https://tackleroomsupply.com/sitemap.xml

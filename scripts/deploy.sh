@@ -26,8 +26,6 @@ EXCLUDES=(
   --exclude='.dh-diag'
   --exclude='/forecast/'
   --exclude='/map/'
-  --exclude='/favicon.gif'
-  --exclude='/favicon.ico'
 )
 
 BUILD=1

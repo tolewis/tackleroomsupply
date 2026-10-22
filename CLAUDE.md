@@ -53,7 +53,7 @@ src/
 - `npm run dev` — local dev server
 - `npm run build` — static export to `out/`
 - `npm run lint` — ESLint
-- `npm run deploy` — build + rsync to DreamHost
+- `npm run deploy` — build on the server, then rsync `out/` to DreamHost (see README Deployment)
 
 ## Sanity Setup
 Sanity project ID needs to be set in environment variables:

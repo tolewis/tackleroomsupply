@@ -118,18 +118,22 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 - `npm run dev` — local dev server
 - `npm run build` — static export to `out/`, then sitemap generation
 - `npm run lint` — ESLint
-- `npm run deploy` — build + rsync to DreamHost
+- `npm run deploy` — build on the server, then rsync `out/` to DreamHost
 
 ## Deployment
 
-`npm run deploy` runs `scripts/deploy.sh`, which rsyncs the `out/` directory to DreamHost. The script reads these environment variables:
+Build on the server, then copy only `out/` to DreamHost. The DreamHost docroot holds build output only. It holds no source, no `node_modules`, and no `.git`.
 
-- `REMOTE_HOST`
-- `REMOTE_USER`
-- `REMOTE_PATH`
-- `LOCAL_OUT`
+`npm run deploy` runs `scripts/deploy.sh`. The script does these steps:
 
-Set them in your shell or in a gitignored env file. Do not commit their values.
+1. Builds with Node 22 (`.nvmrc`): `npm ci`, then `npm run build`.
+2. Reads DreamHost credentials from the `dreamhost` skill env file. It never prints them.
+3. Copies `out/` to the docroot with rsync and no delete.
+4. Never copies `.htaccess`. The live `.htaccess` holds the security blocks.
+   It also excludes `forecast/` (the forecast pipeline owns it) and copies `map/` without delete.
+5. Checks the home page, `/about/`, `/sitemap.xml`, and `/.git/config` through Cloudflare.
+
+Use `--prune` to remove stale build files. The script shows the delete list first and asks for `yes`. Use `--no-build` to deploy the existing `out/`.
 
 ## Sanity Setup
 

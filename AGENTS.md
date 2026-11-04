@@ -46,3 +46,5 @@ If this repo is a living product (not a skill dump, agent workspace, or archive)
 ## This-repo notes
 
 Add discovered gotchas here. Do not invent product facts that are not in README, docs, or bibles.
+
+Long-form rules, history, and the why: `docs/AGENTS-reference.md`.

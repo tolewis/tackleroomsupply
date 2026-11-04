@@ -1,3 +1,9 @@
+# AGENTS reference
+
+Long-form rules and history. `AGENTS.md` is the only instruction file.
+
+## Former CLAUDE.md (moved here 2026-11-03)
+
 # Unhook Outdoors — Project Documentation
 
 ## Overview

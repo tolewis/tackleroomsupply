@@ -7,7 +7,7 @@ Working agreement for every agent and human in this repo.
 1. Clone/pull over **SSH** only: `git@github.com:tolewis/tackleroomsupply.git`. No tokens in remotes.
 2. Read this file, then `README.md`, then anything in `docs/`, `bibles/`, or `canon/` before you change code.
 3. Fleet doctrine lives in **another repo**. Do not copy it here. Read on demand:
-   - `git@github.com:tolewis/OperatingSystem.git`
+   - `git@github.com:tolewis/infra.git`
    - Canon (short truths): `canon/canon-digest.md`
    - GitHub rules: `bibles/20-github.md`
    - Engineering / TDD: `bibles/60-engineering-principles.md`

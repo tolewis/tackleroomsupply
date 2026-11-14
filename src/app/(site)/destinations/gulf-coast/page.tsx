@@ -55,6 +55,7 @@ export default function GulfCoastPage() {
           src="/images/dest-gulf.webp"
           alt="Warm Gulf Coast water stretching to the horizon"
           className="absolute inset-0 w-full h-full object-cover"
+          fetchPriority="high"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">

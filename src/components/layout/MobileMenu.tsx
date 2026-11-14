@@ -13,50 +13,47 @@ interface MobileMenuProps {
 
 export function MobileMenu({ open, onClose }: MobileMenuProps) {
   const pathname = usePathname();
-  const menuRef = useRef<HTMLDivElement>(null);
-  const firstLinkRef = useRef<HTMLAnchorElement>(null);
+  const dialogRef = useRef<HTMLDialogElement>(null);
+  const closeRef = useRef(onClose);
+  closeRef.current = onClose;
 
+  // Open/close through the native dialog API. showModal() gives us the
+  // modal scroll lock, Escape-to-close, focus management, and ::backdrop.
   useEffect(() => {
-    if (open) {
-      firstLinkRef.current?.focus();
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => {
-      document.body.style.overflow = "";
-    };
+    const dialog = dialogRef.current;
+    if (!dialog) return;
+    if (open && !dialog.open) dialog.showModal();
+    if (!open && dialog.open) dialog.close();
   }, [open]);
+
+  // Escape / history-back / closedby="any" close the dialog outside of our
+  // prop; sync the parent state from the native "close" event.
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    if (!dialog) return;
+    const handle = () => closeRef.current();
+    dialog.addEventListener("close", handle);
+    return () => dialog.removeEventListener("close", handle);
+  }, []);
 
   useEffect(() => {
     onClose();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-    };
-    if (open) document.addEventListener("keydown", handleKeyDown);
-    return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [open, onClose]);
-
   return (
-    <div
-      ref={menuRef}
-      className={cn(
-        "fixed inset-0 z-50 md:hidden flex flex-col bg-surface transition-all duration-300",
-        open
-          ? "opacity-100 pointer-events-auto"
-          : "opacity-0 pointer-events-none"
-      )}
-      role="dialog"
-      aria-modal="true"
+    <dialog
+      ref={dialogRef}
+      closedby="any"
       aria-label="Mobile navigation"
+      className={cn(
+        "fixed inset-0 z-50 md:hidden m-0 h-full w-full max-w-none border-0 p-0",
+        "hidden open:flex flex-col bg-surface backdrop:bg-surface"
+      )}
     >
       <div className="flex items-center justify-end p-4">
         <button
-          onClick={onClose}
+          onClick={() => dialogRef.current?.close()}
           className="p-2 text-text-secondary hover:text-text-primary rounded-lg"
           aria-label="Close menu"
         >
@@ -81,7 +78,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
           return (
             <NextLink
               key={item.href}
-              ref={i === 0 ? firstLinkRef : undefined}
+              autoFocus={i === 0}
               href={item.href}
               className={cn(
                 "font-heading text-2xl font-semibold transition-colors",
@@ -94,6 +91,6 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
           );
         })}
       </nav>
-    </div>
+    </dialog>
   );
 }

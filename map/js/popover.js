@@ -1,11 +1,39 @@
 const popover = document.getElementById('popover');
+
+// Feature detection: the popover API (top layer, Escape, focus restore)
+// and CSS anchor positioning (tracks the marker without rect math).
+const supportsPopover = typeof popover.showPopover === 'function';
+const supportsAnchor =
+  typeof CSS !== 'undefined' && CSS.supports('anchor-name', '--pin');
+
 let currentConfig = null;
 let currentMap = null;
+
+if (supportsPopover) {
+  // The UA hides a closed [popover] element; the .hidden class is only
+  // needed for engines without the popover attribute.
+  popover.classList.remove('hidden');
+}
+
+function isOpen() {
+  if (supportsPopover) return popover.matches(':popover-open');
+  return !popover.classList.contains('hidden');
+}
+
+function clearAnchor() {
+  if (currentConfig && currentConfig.marker) {
+    const el = currentConfig.marker.getElement && currentConfig.marker.getElement();
+    if (el) el.style.anchorName = '';
+  }
+}
 
 function clamp(value, min, max) {
   return Math.min(Math.max(value, min), max);
 }
 
+// JS positioning fallback for desktop engines without anchor positioning.
+// In the top layer (popover API) position:absolute references the viewport,
+// so add the map's viewport offset; in-flow it references #map-section.
 function positionPopover(containerPoint, map) {
   const isMobile = window.innerWidth < 768;
   if (isMobile) {
@@ -15,6 +43,7 @@ function positionPopover(containerPoint, map) {
     popover.style.bottom = '';
     return;
   }
+  if (supportsAnchor) return; // CSS anchor positioning drives layout.
 
   const mapSection = document.getElementById('map-section');
   const mapRect = mapSection.getBoundingClientRect();
@@ -32,6 +61,11 @@ function positionPopover(containerPoint, map) {
   left = clamp(left, gutter, Math.max(gutter, mapRect.width - width - gutter));
   top = clamp(top, gutter, Math.max(gutter, mapRect.height - height - gutter));
 
+  if (supportsPopover) {
+    left += mapRect.left;
+    top += mapRect.top;
+  }
+
   popover.style.left = `${left}px`;
   popover.style.top = `${top}px`;
   popover.style.right = 'auto';
@@ -45,6 +79,7 @@ export function repositionPopover() {
 }
 
 export function showPopover(config, containerPoint, map) {
+  clearAnchor(); // release the previous marker's anchor before reassigning
   currentConfig = config;
   currentMap = map;
 
@@ -80,12 +115,33 @@ export function showPopover(config, containerPoint, map) {
     tagsEl.appendChild(tag);
   });
 
-  popover.classList.remove('hidden');
+  // Anchor the detail card to the clicked marker for modern engines;
+  // CSS then follows it on pan/zoom without any rect math.
+  if (supportsAnchor && config.marker) {
+    const el = config.marker.getElement && config.marker.getElement();
+    if (el) el.style.anchorName = '--pin';
+    popover.style.left = '';
+    popover.style.top = '';
+    popover.style.right = 'auto';
+    popover.style.bottom = 'auto';
+  }
+
+  if (supportsPopover) {
+    if (!isOpen()) popover.showPopover();
+  } else {
+    popover.classList.remove('hidden');
+  }
+  // positionPopover no-ops on mobile and when anchor positioning drives layout.
   requestAnimationFrame(() => positionPopover(containerPoint, map));
 }
 
 export function hidePopover() {
-  popover.classList.add('hidden');
+  if (supportsPopover) {
+    if (isOpen()) popover.hidePopover();
+  } else {
+    popover.classList.add('hidden');
+  }
+  clearAnchor();
   currentConfig = null;
 }
 
@@ -94,10 +150,18 @@ document.getElementById('popover-close').addEventListener('click', (event) => {
   hidePopover();
 });
 
-document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape') hidePopover();
+// The native popover API handles Escape itself (and fires "close",
+// which resets our state). Older engines need the manual listener.
+popover.addEventListener('close', () => {
+  clearAnchor();
+  currentConfig = null;
 });
+if (!supportsPopover) {
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') hidePopover();
+  });
+}
 
 window.addEventListener('resize', () => {
-  if (!popover.classList.contains('hidden')) repositionPopover();
+  if (isOpen()) repositionPopover();
 });

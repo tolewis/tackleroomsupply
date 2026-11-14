@@ -336,6 +336,7 @@ function resetRegionView() {
 function showDestinationPopover(dest, marker) {
   setActiveMarker(marker, 'destination');
   showPopover({
+    marker,
     latLng: [dest.lat, dest.lng],
     thumbnail: dest.thumbnail,
     kindLabel: 'Destination pin',
@@ -360,6 +361,7 @@ function showSpeciesPopover(speciesEntry, marker) {
   const region = getSelectedRegion();
   setActiveMarker(marker, 'fish');
   showPopover({
+    marker,
     latLng: [speciesEntry.lat, speciesEntry.lng],
     kindLabel: 'Fish target',
     kindClass: 'kind-fish',

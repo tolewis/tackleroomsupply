@@ -295,6 +295,11 @@ button, input { font: inherit; }
   overflow-y: auto;
 }
 .filter-body.open { display: block; }
+.filter-body {
+  scrollbar-color: var(--border) transparent;
+  scrollbar-width: thin;
+}
+/* Vendor rules kept as a fallback for engines without the standard properties. */
 .filter-body::-webkit-scrollbar { width: 4px; }
 .filter-body::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
 .filter-group {
@@ -446,6 +451,24 @@ button, input { font: inherit; }
   backdrop-filter: blur(20px);
   box-shadow: 0 12px 48px rgba(0, 0, 0, 0.6);
   overflow: hidden;
+}
+/* Anchor-positioned detail card (modern engines): the card follows the
+   clicked map marker via CSS anchor positioning, so it tracks pan/zoom
+   without getBoundingClientRect math. Engines without anchor support get
+   the JS positioning fallback in js/popover.js. */
+@supports (anchor-name: --pin) {
+  @media (min-width: 769px) {
+    .popover:popover-open {
+      position-anchor: --pin;
+      /* The UA [popover] rule sets inset: 0 + margin: auto (centering); the
+         explicit auto insets and zero margin override it. */
+      inset-block: clamp(220px, anchor(center), calc(100dvh - 220px)) auto;
+      inset-inline: min(calc(anchor(right) + 20px), calc(100vw - 402px)) auto;
+      margin: 0;
+      /* Card vertically centered on the marker point, clamped to the viewport. */
+      translate: 0 -50%;
+    }
+  }
 }
 .popover.hidden { display: none; }
 .popover-close {
@@ -680,10 +703,12 @@ button, input { font: inherit; }
 .content-article strong { color: var(--text-primary); }
 .content-article a {
   color: var(--accent-blue);
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
 }
-.content-article a:hover { border-bottom-color: var(--accent-blue); }
+.content-article a:hover { text-decoration-color: var(--accent-blue); }
 
 .feature-grid, .mini-card-grid {
   display: grid;
@@ -855,9 +880,11 @@ button, input { font: inherit; }
 
   .popover {
     position: fixed;
+    top: auto;
     left: 8px;
     right: 8px;
     bottom: 84px;
+    margin: 0;
     width: auto;
     max-height: 54vh;
     overflow-y: auto;

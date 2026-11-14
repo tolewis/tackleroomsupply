@@ -79,6 +79,7 @@ export default function LouisianaPage() {
           src="/images/dest-louisiana.webp"
           alt="Louisiana marsh flat with redfish tailing at sunrise"
           className="absolute inset-0 w-full h-full object-cover"
+          fetchPriority="high"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">

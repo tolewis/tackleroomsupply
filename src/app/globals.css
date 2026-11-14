@@ -264,6 +264,12 @@ p {
 }
 
 /* ── Scrollbar ──────────────────────────────────────────── */
+:root {
+  scrollbar-color: var(--stone-700) var(--surface);
+  scrollbar-width: thin;
+}
+
+/* Vendor rules kept as a fallback for engines without the standard properties. */
 ::-webkit-scrollbar {
   width: 8px;
 }
